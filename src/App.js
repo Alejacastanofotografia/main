@@ -1,24 +1,43 @@
 import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Switch, Route, Link, withRouter} from 'react-router-dom';
+import Home from './components/home';
+import Sesiones from './components/sesiones';
+import Section360 from './components/360';
+import Books from './components/books';
+import Nav from './components/nav';
+import Contacto from './components/contacto';
+import SobreMi from './components/sobreMi';
 
-function App() {
+let click = true;
+function App(props) {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Nav />
+
+        <Switch>
+          <Route path="/sesiones">
+            <Sesiones />
+          </Route>
+          <Route path="/books">
+            <Books />
+          </Route>
+          <Route path="/360">
+            <Section360 />
+          </Route>
+          <Route path="/contacto">
+            <Contacto />
+          </Route>
+          <Route path="/sobre_mi">
+            <SobreMi />
+          </Route>
+          <Route path="/">
+            <Home />
+            <Contacto />
+            <SobreMi />
+          </Route>
+        </Switch>
+    </Router>
   );
 }
 

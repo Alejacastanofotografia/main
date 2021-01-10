@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+$total: 2rem;
+:root {
+    --background-main: #202020;
+
+    --white-color: #aaa;
+    --main-top: 7rem;
+    
+    --main-gradient: linear-gradient(
+        to bottom, 
+	hsl(0, 0%, 5%),
+	hsl(0, 0%, 18%)
+    );
+    --main-gradient-right: linear-gradient(
+        to right, 
+	hsl(0, 0%, 5%),
+	hsl(0, 0%, 18%)
+    );
+
+}
+@import 'src/mixins', 'src/header', 'src/home';
+
+::-webkit-scrollbar {
+    width: 10px;   
+}
+::-webkit-scrollbar-thumb{
+    background: var(--main-gradient-right);
+    border-radius: 6px;
+}
+body{
+    background: var(--background-main);
+    letter-spacing: .1rem;
+}
+
