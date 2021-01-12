@@ -1,82 +1,89 @@
 .home {
-    display: grid;
-    grid-template-columns: 30% 1fr;
-//    padding: var(--main-top) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  //    padding: var(--main-top) 0;
+  width: 100%;
+  height: 100vh;
+  .itemHome {
+    @include flexCenterC;
     width: 100%;
-    height: 100vh;
-    .itemHome{
-        @include flexCenterC;  
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+    height: 100%;
+    overflow: hidden;
+  }
+  .imgHome {
+    .wrapperImg {
+      position: relative;
+      width: 350px;
+      height: 500px;
+      background: #333;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        box-shadow: 0px 4px 6px #000;
+      }
+      @include left-bar;
     }
-    .imgHome{
-	.wrapperImg{
-	    position: relative;
-	    width: 350px;	
-	    height: 500px;
-	    background: #333;
-	    img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		box-shadow: 0px 4px 6px #000;
-		&:nth-child(1){
-		    top: 0;
-		    left: 0;
-		    z-index: 2;
-		}
-		&:nth-child(2){
-		    top: 15px;
-		    left: 15px;
-		    z-index: 2;
-		}
-		&:nth-child(3){
-		    top: 30px;
-		    left: 30px;
-		    z-index: 3;
-		}
-		&:nth-child(4){
-		    top: 45px;
-		    left: 45px;
-		    z-index: 4;
-		}
-		&:nth-child(5){
-		    top: 60px;
-		    left: 60px;
-		    z-index: 5;
-		}
-	    }
-	    $left: -4rem;
-	    $bottom: -8rem;
-	    $large: 300px;
-	    $ancho: .4rem;
-	    &:before, &:after {
-		content: "";
-		position: absolute;
-		display: block;
-		border-radius: 1rem;
-		bottom: -6rem;
-		left: $left;
-		bottom: $bottom;
-	    }
-	    &:before {
-		width: $ancho;
-		height: $large;
-		background: var(--main-gradient-right);
-		left: $left + 1rem;
-	    }
-	    &:after {
-		width: $large;
-		height: $ancho;
-		background: var(--main-gradient);
-		bottom: $bottom + 1rem;
-	    }
-	    .animation{
-	       border: 2px solid #f00; 
-	    }
-	  
-	}
+  }
+  .textHome {
+    h2 {
+      @include title;
+      width: 95%;
+      font-size: var(--font-s-big);
     }
+    p {
+      @include parraf;
+      width: 95%;
+    }
+  }
+}
+.itemImg {
+  &:nth-child(1) {
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  &:nth-child(2) {
+    z-index: 2;
+  }
+  &:nth-child(3) {
+    z-index: 3;
+  }
+  &:nth-child(4) {
+    z-index: 4;
+  }
+  &:nth-child(5) {
+    z-index: 5;
+  }
+}
+//.itemImg:nth-child(5) {
+//    top: 60px;
+//    left: 60px;
+//    z-index: 5;
+//}
+.animation {
+  animation: move 6s;
+  @keyframes move {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(130%, 0);
+    }
+    99% {
+      z-index: 1;
+    }
+    100% {
+      transform: translate(0, 0);
+      top: 0;
+      left: 0;
+    }
+  }
+}
+//active for home
+.index-1 {
+  z-index: 1;
+  top: 0;
+  left: 0;
 }

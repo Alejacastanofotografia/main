@@ -1,12 +1,83 @@
 @mixin flexCenter {
-    display: flex;    
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 @mixin flexCenterC {
-    @include flexCenter;
-    flex-direction: column;
+  @include flexCenter;
+  flex-direction: column;
 }
 
+@mixin left-bar {
+  $left: -4rem;
+  $bottom: -4rem;
+  $large: 300px;
+  $ancho: 0.6rem;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 1rem;
+    bottom: -6rem;
+    left: $left;
+    bottom: $bottom;
+  }
+  &:before {
+    width: $ancho;
+    height: $large;
+    background: var(--main-gradient-right);
+    left: $left + 1rem;
+  }
+  &:after {
+    width: $large;
+    height: $ancho;
+    background: var(--main-gradient);
+    bottom: $bottom + 1rem;
+  }
+}
+@mixin left-bar-0 {
+  $ancho: 0.6rem;
+  @include left-bar;
+  &:before {
+    left: -1rem;
+    width: $ancho;
+    z-index: -1;
+    bottom: -2rem;
+  }
+  &:after {
+    top: 99%;
+    width: 120%;
+    left: -2.5rem;
+    height: $ancho;
+  }
+}
+@mixin bottom-bar{
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 1rem;
+    width: 50%;
+    height: .5rem;
+    bottom: -.5rem;
+    left: 25%;
+    background: var(--main-gradient);
+  }
+}
+@mixin title {
+  color: var(--white-color);
+  text-align: center;
+  font-size: var(--font-s-large);
+  padding: 0 .2rem;
+}
+@mixin parraf {
+  color: var(--white-color);
+  text-align: center;
+  font-size: var(--font-s-normal);
+  margin: 2rem 0;
+  padding: 0 .3rem;
+}
 

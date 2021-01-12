@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import {BrowserRouter as Router, Switch, Route, Link, withRouter} from 'react-router-dom';
 import Home from './components/home';
+import Slider from './components/slider';
 import Sesiones from './components/sesiones';
 import Section360 from './components/360';
 import Books from './components/books';
@@ -32,9 +33,10 @@ function App(props) {
             <SobreMi />
           </Route>
           <Route path="/">
+            <Slider />
             <Home />
-            <Contacto />
             <SobreMi />
+            <Contacto />
           </Route>
         </Switch>
     </Router>

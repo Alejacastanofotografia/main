@@ -4,11 +4,8 @@
 }
 $total: 2rem;
 :root {
+    //backgrounds
     --background-main: #202020;
-
-    --white-color: #aaa;
-    --main-top: 7rem;
-    
     --main-gradient: linear-gradient(
         to bottom, 
 	hsl(0, 0%, 5%),
@@ -20,8 +17,23 @@ $total: 2rem;
 	hsl(0, 0%, 18%)
     );
 
+    //colors
+    --white-color: #eee;
+    --black-color: #202020;
+    --light-color: hsl(345, 100%, 60%);
+
+    //font-sizes
+    --font-s-normal: 1.3rem;
+    --font-s-large: 1.8rem;
+    --font-s-big: 2.8rem;
+    --font-s-extraBig: 3.8rem;
+    --font-s-small: .8rem;
+
+    --main-top: 7rem;
+    
+
 }
-@import 'src/mixins', 'src/header', 'src/home';
+@import 'src/mixins', 'src/header', 'src/home', 'src/sobreMi', 'src/slider';
 
 ::-webkit-scrollbar {
     width: 10px;   
@@ -34,4 +46,3 @@ body{
     background: var(--background-main);
     letter-spacing: .1rem;
 }
-

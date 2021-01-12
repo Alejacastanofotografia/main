@@ -4,6 +4,7 @@
     width: 100%;
     padding: 1rem 0 .5rem 0;
     background: var(--background-main);
+    z-index: 100;
     nav {
 	width: 100%;
 	ul {
@@ -27,13 +28,13 @@
 		    border-left: 1px solid hsl(0, 0%, 17%);
 		    &:hover{
 			transform: scale(0.7);
-			color: #0f0;
+			color: var(--light-color);
 			border-color: var(--background-main);
 		        box-shadow: outset;
 		    }
 		}
                 .activeMenu{
-		    color: #0f0;
+	            color: var(--light-color);
 		    box-shadow: none;
 		    border-left: 1px solid hsl(0, 0%, 5%);
 		    border-top: 1px solid hsl(0, 0%, 0%);
@@ -54,7 +55,7 @@
 			span{
 			    padding: 0 .4rem;
 			    &:nth-child(odd){
-				color: #f00;
+				color: var(--light-color);
 			    }
 			}
 		    }
