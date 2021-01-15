@@ -1,6 +1,54 @@
 .slider {
-    width: 100%;
-    height: 600px;
-    background: #333;
+  @include flexCenter;
+  width: 100%;
+  height: 400px;
+  margin-top: var(--main-top);
+  background: url('../images/background/slider1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: fondo 10s infinite linear;
+  transition: 3s;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
     display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+  @keyframes fondo {
+    from {
+      background-position: 0 100%;
+    }
+    to {
+      background-position: 0 0%;
+    }
+  }
+  @media (max-width: 400px) {
+    .slider {
+      width: 100%;
+      background: url('Imagenes/Fondos/media/img3.jpg');
+    }
+  }
+  .fraseSlider {
+    width: 100%;
+    position: relative;
+    font-size: var(--font-s-big);
+    text-align: center;
+    font-weight: bold;
+    color: #ddd;
+    overflow: hidden;
+    padding: 0 2rem;
+    transition: 0.5s;
+    z-index: 5;
+    i {
+      transition: 0.8s;
+      color: transparent;
+      font-style: normal;
+    }
+  }
 }

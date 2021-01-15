@@ -1,24 +1,33 @@
-//let img = document.querySelectorAll('.itemImg');
-let img = document.getElementsByClassName('select');
-let num = 4;
-const animationImg = () => {
-    
-    setTimeout(() => {
-        img[num].classList.add('animation')
-        setTimeout(() => {
-	    img[num].classList.add('index-1');
-	    img[num].classList.remove('itemImg');
-	    img[num].classList.remove('animation');
-	    num = num - 1; 
-	    if(num < 0){
-                num = 4;
-		for(let i = 0; i < 5; i++){
-                    img[i].classList.add('itemImg') 
+function parrafosi(){
+	var num = 0;
+	interval = setInterval(functionInterval, 300);	
+	
+	function functionInterval(){
+		if(num >= 13){
+			clearInterval(interval);
+            stop();
 		}
-	    } 
-	    animationImg();
-	}, 5900);	
-    },1000)
-    
+		else{
+			num++;
+	    elementoP = document.querySelector('.fraseSlider i:nth-child('+num+')');
+	    elementoP.style.color = '#bbb';
+		}
+	}
 }
-animationImg();
+function stop(){
+	var num = 14;
+	interval2 = setInterval(functionInterval2, 300)
+	
+	function functionInterval2(){
+		if(num <= 1){
+			clearInterval(interval2);
+            parrafosi();	
+		}
+		else{
+			num--;
+	    elementoP = document.querySelector('.fraseSlider i:nth-child('+num+')');
+	    elementoP.style.color = 'transparent';
+		}
+	}
+}
+parrafosi();

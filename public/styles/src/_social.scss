@@ -1,0 +1,41 @@
+.wrapperSocial {
+  @include flexCenterC;
+  width: 100%;
+  margin: auto;
+  nav {
+    ul {
+      li {
+        list-style: none;
+        display: inline-block;
+        padding: .8rem 0.4rem .8rem 0.4rem;
+        margin: 0 1rem;
+        border-radius: 8px;
+        z-index: 2;
+        background: var(--main-gradient);
+        a {
+          font-size: 2rem;
+          text-decoration: none;
+          box-shadow: 2px 2px 2px #000;
+          padding: 0.3rem .5rem;
+          border-radius: 6px;
+          color: var(--white-color);
+          background: var(--background-main);
+          transition: 0.5s;
+          border-left: 1px solid hsl(0, 0%, 17%);
+          &:hover {
+            transform: scale(0.7);
+            color: var(--light-color);
+            border-color: var(--background-main);
+            box-shadow: outset;
+          }
+        }
+      }
+    }
+  }
+  p{
+ padding: .5rem 0; 
+ margin: 1rem 0;
+ color: var(--white-color);
+  }
+
+}

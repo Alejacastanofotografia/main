@@ -53,7 +53,7 @@
     height: $ancho;
   }
 }
-@mixin bottom-bar{
+@mixin bottom-bar {
   position: relative;
   &:before {
     content: '';
