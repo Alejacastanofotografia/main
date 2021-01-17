@@ -29,11 +29,11 @@ $total: 2rem;
     --font-s-extraBig: 3.8rem;
     --font-s-small: .8rem;
 
-    --main-top: 7rem;
+    --main-top: 8rem;
     
 
 }
-@import 'src/mixins', 'src/header', 'src/menu', 'src/sobreMi', 'src/slider', 'src/home360', 'src/social';
+@import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu', 'src/sobreMi', 'src/slider', 'src/home360', 'src/social';
 
 ::-webkit-scrollbar {
     width: 10px;   

@@ -2,8 +2,8 @@ import React from 'react';
 class Slider extends React.Component {
   render() {
     return (
-      <div class="slider">
-        <p class="fraseSlider">
+      <div className="slider">
+        <p className="fraseSlider">
           <i>Solo </i>
           <i>basta </i>
           <i>un </i>

@@ -1,11 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  withRouter,
-  HashRouter,
 } from 'react-router-dom';
 
 class Nav extends React.Component {
@@ -62,7 +57,7 @@ class Nav extends React.Component {
               </Link>
             </li>
             <li className="wrapperLogo">
-              <Link className="Logo" to="/" onClick={this.activeHome}>
+              <Link className="Logo" to="/" id="logo360"onClick={this.activeHome}>
                 <h1>
                   Aleja Castaño
                   <br />

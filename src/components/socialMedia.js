@@ -8,17 +8,17 @@ class Social extends React.Component {
           <ul>
             <li>
               <a className="itemSocial" href="#">
-                <i class="fab">&#xf232;</i>
+                <i className="fab">&#xf232;</i>
               </a>
             </li>
             <li>
               <a className="itemSocial" href="#">
-                <i class="fab">&#xf16d;</i>
+                <i className="fab">&#xf16d;</i>
               </a>
             </li>
             <li>
               <a className="itemSocial" href="#">
-                <i class="fab">&#xf39e;</i>
+                <i className="fab">&#xf39e;</i>
               </a>
             </li>
           </ul>

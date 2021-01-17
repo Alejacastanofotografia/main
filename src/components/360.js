@@ -1,32 +1,16 @@
 import React from 'react';
+//import { start360 } from '/scripts/vr/main360.js';
 
- class Section360 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
-  }
-
-  componentDidMount() {
-    this.timerId = setInterval(() => this.tick(), 1000);
-  }
-  componentWillUnmount() {
-    clearInterval(this.timerId);
-  }
-
-  tick() {
-    this.setState({
-      date: new Date(),
-    });
-  }
-
-  
+class Section360 extends React.Component {
   render() {
     return (
       <div className="home360">
-        <div id="container360" className="container360"></div>
-        <div>
-          <h1>360 Gallery</h1>
-          <p>{this.state.date.toLocaleTimeString()}</p>
+        <div id="viewer"></div>
+        <div className="wrapperError" id="ifStop360">
+          <p >
+            <i className="fas">&#xf04b;</i> <br />
+            Toca aquí para iniciar la reproducción
+          </p>
         </div>
       </div>
     );

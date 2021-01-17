@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import {BrowserRouter as Router, Switch, Route, Link, withRouter} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Menu from './components/menu';
 import Slider from './components/slider';
 import Sesiones from './components/sesiones';
@@ -9,6 +8,7 @@ import Nav from './components/nav';
 import Contacto from './components/contacto';
 import SobreMi from './components/sobreMi';
 import Social from './components/socialMedia';
+
 
 function App(props) {
 

@@ -30,4 +30,4 @@ function stop(){
 		}
 	}
 }
-parrafosi();
+//parrafosi();
