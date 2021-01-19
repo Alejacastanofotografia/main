@@ -942,34 +942,35 @@
   position: relative;
   z-index: 20; }
 
-.home360 .wrapperError {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  flex-direction: column;
+.main360 {
+  position: relative;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  top: 0;
-  left: 0;
+  height: 100vh;
+  background: #333;
+  background: url("../../images/background/img9.jpg");
+  background-size: cover;
+  display: block;
   border-radius: 0.7rem; }
 
-.home360 .wrapperError p {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  flex-direction: column;
-  color: #f00;
-  z-index: 10;
-  font-size: 1.5rem;
-  cursor: pointer;
-  position: relative; }
+.main360:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: -0.5rem;
+  left: -0.5rem;
+  padding: 0.5rem;
+  background: var(--main-gradient);
+  border-radius: 1rem;
+  z-index: -1; }
 
-.home360 .wrapperError p i {
-  font-size: 4rem; }
+.main360 #viewer {
+  border-radius: 0.7rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 20; }
 
 .wrapperSocial {
   display: flex;

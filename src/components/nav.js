@@ -96,8 +96,7 @@ class Nav extends React.Component {
               <Link
                 className="links"
                 to="/360"
-                id="link360"
-                onClick={this.activeCom}>
+                id="link360">
                 360
               </Link>
             </li>
@@ -108,4 +107,5 @@ class Nav extends React.Component {
   }
 }
 
-export default Nav;
+export default Nav
+
