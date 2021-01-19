@@ -49,15 +49,14 @@ function start360() {
     autorotateSpeed: '0.5rpm',
   });
 }
-
+let home360;
 window.onload = () => {
   start360();
   document.querySelector('#defaultHome').addEventListener('click', call360);
   document.querySelector('#link360').addEventListener('click', call360);
   document.querySelector('#logo360').addEventListener('click', call360);
-  document.querySelector('#ifStop360').addEventListener('click', call360);
 };
 
 function call360() {
-  return start360(), setTimeout(start360, 500);
+  return setTimeout(start360, 300);
 }
