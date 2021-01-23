@@ -53,6 +53,27 @@
     height: $ancho;
   }
 }
+@mixin afterGradient {
+  padding: 1.3rem 0.4rem 1.2rem 0.4rem;
+  border-radius: 8px;
+  background: var(--main-gradient);
+  z-index: 2;
+}
+@mixin beforeGradient {
+  padding: 0.8rem;
+  border-radius: 6px;
+  background: var(--background-main);
+  box-shadow: 2px 2px 2px #000;
+  color: var(--white-color);
+  transition: 0.5s;
+  border-left: 1px solid hsl(0, 0%, 17%);
+  &:hover {
+    transform: scale(0.7);
+    color: var(--light-color);
+    border-color: var(--background-main);
+    box-shadow: outset;
+  }
+}
 @mixin bottom-bar {
   position: relative;
   &:before {
@@ -61,8 +82,8 @@
     display: block;
     border-radius: 1rem;
     width: 50%;
-    height: .5rem;
-    bottom: -.5rem;
+    height: 0.5rem;
+    bottom: -0.5rem;
     left: 25%;
     background: var(--main-gradient);
   }
@@ -71,13 +92,12 @@
   color: var(--white-color);
   text-align: center;
   font-size: var(--font-s-large);
-  padding: 0 .2rem;
+  padding: 0 0.2rem;
 }
 @mixin parraf {
   color: var(--white-color);
   text-align: center;
   font-size: var(--font-s-normal);
   margin: 2rem 0;
-  padding: 0 .3rem;
+  padding: 0 0.3rem;
 }
-

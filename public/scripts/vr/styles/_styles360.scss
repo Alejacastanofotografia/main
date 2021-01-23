@@ -8,7 +8,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   position: absolute;
   z-index: 90;
   bottom: -40px;
@@ -22,7 +22,7 @@
   font-size: 2rem;
   font-weight: bold;
   position: absolute;
-  bottom: 500%;
+  bottom: 10px;
   z-index: 50;
 }
 .next360{

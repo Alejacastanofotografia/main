@@ -29,37 +29,48 @@
     position: relative;
     z-index: 20;
   }
-
 }
-.main360 {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-
-  background: #333;
-  background: url('../../images/background/img9.jpg');
-  background-size: cover;
-  display: block;
-  border-radius: 0.7rem;
-  &:before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: -0.5rem;
-    left: -0.5rem;
-    padding: 0.5rem;
-    background: var(--main-gradient);
-    border-radius: 1rem;
-    z-index: -1;
-  }
-  #viewer {
-    border-radius: 0.7rem;
-    height: 100%;
-    overflow: hidden;
+.wrapper360 {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  .main360 {
     position: relative;
-    z-index: 20;
-  }
+    height: 100vh;
 
+    background: #333;
+    background: url('../../images/background/img9.jpg');
+    background-size: cover;
+    z-index: 10;
+    #viewer {
+      height: 100%;
+      z-index: 20;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+  .nav360 {
+      @include flexCenterC;
+      justify-content: flex-start;
+    width: 90%;
+    height: 100%;
+    .mainNav360 {
+      ul {
+	  width: 100%;
+        li {
+	    list-style:none;
+	    @include afterGradient;
+	    margin: .5rem 0;
+          .links360 {
+	      @include beforeGradient
+            color: var(--white-color);
+	    font-size: 1.2rem;
+	    img{
+	    width: 1.2rem;
+	    height:1.2rem;
+	    }
+          }
+        }
+      }
+    }
+  }
 }

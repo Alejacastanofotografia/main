@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Link,
-} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -31,7 +29,7 @@ class Nav extends React.Component {
           <ul>
             <li>
               <Link
-                className="links"
+                className="links activeMenu"
                 id="defaultHome"
                 to="/"
                 onClick={this.activeCom}>
@@ -57,7 +55,11 @@ class Nav extends React.Component {
               </Link>
             </li>
             <li className="wrapperLogo">
-              <Link className="Logo" to="/" id="logo360"onClick={this.activeHome}>
+              <Link
+                className="Logo"
+                to="/"
+                id="logo360"
+                onClick={this.activeHome}>
                 <h1>
                   Aleja Castaño
                   <br />
@@ -93,10 +95,7 @@ class Nav extends React.Component {
               </Link>
             </li>
             <li>
-              <Link
-                className="links"
-                to="/360"
-                id="link360">
+              <Link className="links" to="/360" id="link360">
                 360
               </Link>
             </li>
@@ -106,6 +105,4 @@ class Nav extends React.Component {
     );
   }
 }
-
-export default Nav
-
+export default Nav;

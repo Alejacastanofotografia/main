@@ -4,7 +4,7 @@ var viewer;
 
 let changeImg = true;
 function change() {
-  if(changeImg) {
+  if (changeImg) {
     viewer
       .setPanorama('https://edcas804.github.io/360/img1.jpg')
       .then(() => (changeImg = false));
@@ -49,13 +49,27 @@ function start360() {
     autorotateSpeed: '0.5rpm',
   });
 }
-window.onload= ()=>{
+window.onload = () => {
   call360();
-  document.querySelector('#defaultHome').addEventListener('click', call360);
-  document.querySelector('#logo360').addEventListener('click', call360);
-  document.querySelector('#link360').addEventListener('click', call360);
+  if (document.querySelector('#defaultHome'))
+    document.querySelector('#defaultHome').addEventListener('click', call360);
+
+  if (document.querySelector('#logo360'))
+    document.querySelector('#logo360').addEventListener('click', call360);
+
+  if (document.querySelector('#logo360'))
+    document.querySelector('#logo360').addEventListener('click', call360);
+
+  if (document.querySelector('#link360'))
+    document.querySelector('#link360').addEventListener('click', reloadMain);
+
+  if (document.querySelector('#toHome'))
+    document.querySelector('#toHome').addEventListener('click', reloadMain);
 };
 
 function call360() {
   return setTimeout(start360, 300);
+}
+function reloadMain() {
+  setTimeout(() => location.reload(), 1000);
 }
