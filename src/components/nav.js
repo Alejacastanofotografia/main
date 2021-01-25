@@ -1,26 +1,30 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {selectSesion} from './scripts/sesiones.js';
 
 class Nav extends React.Component {
   constructor(props) {
     super(props);
 
     this.activeCom = this.activeCom.bind(this);
-    this.activeHome = this.activeHome.bind(this);
+    this.selectSesion = this.sesion.bind(this);
   }
-  activeCom(e, home) {
+sesion(e, total, classNameD, folder, paisajes) {
+    selectSesion(e, total, classNameD, folder, paisajes);
+  }
+  
+  activeCom(e, menu) {
     let link = document.querySelectorAll('.links');
     link.forEach(links => {
       links.classList.remove('activeMenu');
     });
     e.target.classList.add('activeMenu');
-  }
-  activeHome() {
-    let link = document.querySelectorAll('.links');
-    link.forEach(links => {
-      links.classList.remove('activeMenu');
-    });
-    document.querySelector('#defaultHome').classList.add('activeMenu');
+    if (menu) {
+      link.forEach(links => {
+        links.classList.remove('activeMenu');
+      });
+      document.querySelector('#defaultHome').classList.add('activeMenu');
+    }
   }
   render() {
     return (
@@ -29,14 +33,14 @@ class Nav extends React.Component {
           <ul>
             <li>
               <Link
-                className="links activeMenu"
+                className="links "
                 id="defaultHome"
                 to="/"
                 onClick={this.activeCom}>
                 Home
               </Link>
             </li>
-            <li>
+            <li onClick={e => this.selectSesion(e, 18, 'galeriaV', 'Adulto')}>
               <Link
                 className="links"
                 to="/sesiones"
@@ -59,7 +63,7 @@ class Nav extends React.Component {
                 className="Logo"
                 to="/"
                 id="logo360"
-                onClick={this.activeHome}>
+                onClick={e => this.activeCom(e, 'menu')}>
                 <h1>
                   Aleja Castaño
                   <br />

@@ -33,7 +33,7 @@ $total: 2rem;
     
 
 }
-@import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu', 'src/sobreMi', 'src/slider', 'src/home360', 'src/social';
+@import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu', 'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones';
 
 ::-webkit-scrollbar {
     width: 10px;   
@@ -46,3 +46,4 @@ body{
     background: var(--background-main);
     letter-spacing: .1rem;
 }
+.hide{display: none}

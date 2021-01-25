@@ -1,40 +1,67 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
+import {selectSesion} from './scripts/sesiones.js';
 
 class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.selectSesion = this.sesion.bind(this);
+  }
+  sesion(e, total, classNameD, folder, paisajes) {
+    selectSesion(e, total, classNameD, folder, paisajes);
+  }
   render() {
     return (
       <div className="menu">
         <div className="wrapper">
-          <div className="wrapperImg">
+          <Link
+            to="/sesiones"
+            className="wrapperImg"
+            onClick={e => this.selectSesion(e, 18, 'galeriaV', 'Adulto')}>
             <img src="/images/menu/img4.jpg" alt="Retraro" title="retrato" />
             <div className="wrapperText">
               <p>Retratos</p>
             </div>
-          </div>
-          <div className="wrapperImg">
+          </Link>
+          <Link
+            to="sesiones"
+            className="wrapperImg"
+            onClick={e =>
+              this.selectSesion(e, 20, 'galeria', 'Paisajes', 'paisajes')
+            }>
             <img src="/images/menu/img2.jpg" alt="Retraro" title="retrato" />
             <div className="wrapperText">
               <p>Paisajes</p>
             </div>
-          </div>
-          <div className="wrapperImg">
+          </Link>
+          <Link
+            to="/sesiones"
+            className="wrapperImg"
+            onClick={e => this.selectSesion(e, 10, 'galeria', 'Pcomunion')}>
             <img src="/images/menu/img1.jpg" alt="Retraro" title="retrato" />
             <div className="wrapperText">
-              <p>Primera < br/>Comunión </p>
+              <p>
+                Primera <br />
+                Comunión
+              </p>
             </div>
-          </div>
-          <div className="wrapperImg">
+          </Link>
+          <Link
+	    to="/sesiones"
+            className="wrapperImg"
+            onClick={e => this.selectSesion(e, 10, 'galeriaV', 'Prequinces')}>
             <img src="/images/menu/img20.jpg" alt="Retraro" title="retrato" />
             <div className="wrapperText">
               <p>Quinces</p>
             </div>
-          </div>
-          <div className="wrapperImg">
+          </Link>
+          <Link to="/sesiones"className="wrapperImg" onClick={e => this.selectSesion(e, 12, 'galeriaV', 'Boda')}>
             <img src="/images/menu/img10.jpg" alt="Retraro" title="retrato" />
             <div className="wrapperText">
               <p>Bodas</p>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     );
