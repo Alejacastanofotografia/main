@@ -1391,9 +1391,6 @@
   /*vertical*/
   /*horizontal*/ }
 
-.modalSesiones p {
-  color: #fff; }
-
 .modalSesiones .imagenLight,
 .modalSesiones .imagenLightHori {
   width: 100%;
@@ -1410,6 +1407,11 @@
   max-height: 700px;
   object-fit: cover; }
 
+@media (max-width: 470px) {
+  .modalSesiones .imagenLight img {
+    width: 96%;
+    height: auto; } }
+
 .modalSesiones .imagenLightHori img {
   width: auto;
   height: 520px;
@@ -1418,115 +1420,81 @@
   max-height: 530px;
   position: relative; }
 
-@media (max-width: 470px) {
-  .imagenLight img {
-    width: 96%;
-    height: auto; } }
-
 @media (max-width: 600px) {
-  .imagenLightHori img {
+  .modalSesiones .imagenLightHori img {
     width: 100%;
     height: auto; } }
 
-/*botones titulos flechas*/
-.contenedorbotones {
+.modalSesiones .closeModal {
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: .5s;
   position: absolute;
-  top: 15px;
-  left: 2%;
-  display: flex;
-  justify-content: center; }
+  top: 2rem;
+  right: 2rem; }
 
-.botonlight {
-  color: var(--main-colorLight);
-  font-size: var(--main-font-sizeLight);
-  font-family: var(--main-font-family);
-  padding: 2px;
-  background: none;
-  border: none; }
+.modalSesiones .closeModal:hover {
+  transform: scale(1.1);
+  color: #fff; }
 
-.cerrarLight {
-  position: absolute;
-  top: 15px;
-  color: var(--main-colorLight);
-  font-size: var(--main-font-sizeLight);
-  right: 2%; }
-
-.cerrarLight:hover {
-  color: #fff;
-  transform: scale(1.2); }
-
-.hlight {
-  position: absolute;
-  width: 100%;
-  bottom: 8%;
-  text-align: center;
-  font-family: var(--main-font-family);
-  color: #151515;
-  font-size: var(--main-font-size2Light); }
-
-.carpetastitulo {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  opacity: 0.01;
-  font-family: var(--main-font-family); }
-
-.back,
-.go {
-  padding: 2px 8px;
+.modalSesiones .next-prev {
   position: absolute;
   top: 48%;
-  color: var(--main-colorLight);
-  font-size: var(--main-font-size2Light); }
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: .5s;
+  font-size: 3rem;
+  display: block; }
 
-.back {
-  left: 0;
-  border-radius: 0px 5px 5px 0px; }
-
-.go {
-  right: 0;
-  border-radius: 5px 0px 0px 5px; }
-
-.back:hover,
-.go:hover {
-  color: #000;
+.modalSesiones .next-prev:hover {
   transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.5); }
+  color: #fff; }
 
-@media (max-width: 470px) {
-  .back {
-    left: 2%; }
-  .go {
-    right: 2%; } }
+.modalSesiones .prev {
+  left: 2rem; }
 
-.navLight {
+.modalSesiones .next {
+  right: 2rem; }
+
+.modalSesiones .navLight {
   position: absolute;
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.8);
   padding: 0.8rem; }
 
-.navLight ul {
+.modalSesiones .navLight #infoModal {
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: .5s;
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  padding: 1rem; }
+
+.modalSesiones .navLight #infoModal:hover {
+  transform: scale(1.1);
+  color: #fff; }
+
+.modalSesiones .navLight ul {
   display: flex;
   justify-content: center;
   align-items: center; }
 
-.activeFotos,
-.activeFotos2 {
-  position: relative;
-  display: inline-block;
-  font-size: 1.2rem;
-  color: #505050;
-  margin: 5px; }
+.modalSesiones .navLight ul li {
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: .5s; }
 
-.navLight ul li:hover {
-  transform: scale(1.1); }
-
-.activeFotos2 {
-  display: none; }
+.modalSesiones .navLight ul li:hover {
+  transform: scale(1.1);
+  color: #fff; }
 
 .barrausuario {
   position: absolute;
@@ -1535,31 +1503,6 @@
   width: 1px;
   height: 5px; }
 
-/* estilo para controlar desde javascript */
-.contenedorMenusUser {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; }
-
-.userSesion {
-  display: none;
-  justify-content: center; }
-
-.nameUser {
-  outline: none;
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-family: FreeMono, monospace;
-  color: #fff; }
-
-.position {
-  animation: transladar 0.5s;
-  transition: 0.7s;
-  opacity: 1; }
-
-/*seccion para el contenido de las galerias de usuarios*/
 ::-webkit-scrollbar {
   width: 10px; }
 

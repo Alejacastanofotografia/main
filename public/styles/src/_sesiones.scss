@@ -341,17 +341,26 @@
     box-shadow: rgba(167, 167, 167, 0.5) 3px 3px 6px;
   }
 }
-
+@mixin buttonsModal {
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: .5s;
+  &:hover {
+    transform: scale(1.1); 
+    color: #fff;
+  }
+}
+$pad: 2rem;
 .modalSesiones {
   display: block;
-  position:fixed;
+  position: fixed;
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.9);
   z-index: 1000;
-  p{color: #fff}
   .imagenLight,
   .imagenLightHori {
     width: 100%;
@@ -368,6 +377,10 @@
     height: 85%;
     max-height: 700px;
     object-fit: cover;
+    @media (max-width: 470px) {
+      width: 96%;
+      height: auto;
+    }
   }
   /*horizontal*/
   .imagenLightHori img {
@@ -377,125 +390,56 @@
     max-width: 100%;
     max-height: 530px;
     position: relative;
+    @media (max-width: 600px) {
+      width: 100%;
+      height: auto;
+    }
   }
-}
-
-@media (max-width: 470px) {
-  .imagenLight img {
-    width: 96%;
-    height: auto;
+  .closeModal {
+    @include buttonsModal;
+    position: absolute;
+    top: $pad;
+    right: $pad;
   }
-}
-@media (max-width: 600px) {
-  .imagenLightHori img {
+  .next-prev {
+    position: absolute;
+    top: 48%;
+    @include buttonsModal;
+    font-size: 3rem;
+    display: block;
+  }
+  .prev {
+    left: $pad;
+  }
+  .next {
+    right: $pad;
+  }
+  .navLight {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    #infoModal{
+	@include buttonsModal;
+       position: absolute; 
+       bottom: 0;
+       left: $pad;
+       padding: 1rem;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        @include buttonsModal;
+      }
+    }
   }
-}
-/*botones titulos flechas*/
-.contenedorbotones {
-  position: absolute;
-  top: 15px;
-  left: 2%;
-  display: flex;
-  justify-content: center;
-}
-.botonlight {
-  color: var(--main-colorLight);
-  font-size: var(--main-font-sizeLight);
-  font-family: var(--main-font-family);
-  padding: 2px;
-  background: none;
-  border: none;
-}
-.cerrarLight {
-  position: absolute;
-  top: 15px;
-  color: var(--main-colorLight);
-  font-size: var(--main-font-sizeLight);
-  right: 2%;
-}
-.cerrarLight:hover {
-  color: #fff;
-  transform: scale(1.2);
 }
 
-.hlight {
-  position: absolute;
-  width: 100%;
-  bottom: 8%;
-  text-align: center;
-  font-family: var(--main-font-family);
-  color: #151515;
-  font-size: var(--main-font-size2Light);
-}
-.carpetastitulo {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  opacity: 0.01;
-  font-family: var(--main-font-family);
-}
-
-.back,
-.go {
-  padding: 2px 8px;
-  position: absolute;
-  top: 48%;
-  color: var(--main-colorLight);
-  font-size: var(--main-font-size2Light);
-}
-.back {
-  left: 0;
-  border-radius: 0px 5px 5px 0px;
-}
-.go {
-  right: 0;
-  border-radius: 5px 0px 0px 5px;
-}
-.back:hover,
-.go:hover {
-  color: #000;
-  transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.5);
-}
-@media (max-width: 470px) {
-  .back {
-    left: 2%;
-  }
-  .go {
-    right: 2%;
-  }
-}
-.navLight {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 0.8rem;
-}
-.navLight ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.activeFotos,
-.activeFotos2 {
-  position: relative;
-  display: inline-block;
-  font-size: 1.2rem;
-  color: #505050;
-  margin: 5px;
-}
-.navLight ul li:hover {
-  transform: scale(1.1);
-}
-.activeFotos2 {
-  display: none;
-}
 .barrausuario {
   position: absolute;
   background: #707070;
@@ -503,28 +447,3 @@
   width: 1px;
   height: 5px;
 }
-/* estilo para controlar desde javascript */
-.contenedorMenusUser {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.userSesion {
-  display: none;
-  justify-content: center;
-}
-.nameUser {
-  outline: none;
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-family: FreeMono, monospace;
-  color: #fff;
-}
-.position {
-  animation: transladar 0.5s;
-  transition: 0.7s;
-  opacity: 1;
-}
-/*seccion para el contenido de las galerias de usuarios*/

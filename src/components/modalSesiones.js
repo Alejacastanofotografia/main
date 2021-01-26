@@ -4,45 +4,23 @@ class ModalSesiones extends React.Component {
   render() {
     return (
       <div id="modalSesiones" className="modalSesiones hide">
-        <p className="cerrarLight" id="closeModal">
+        <div className="closeModal" id="closeModal">
           X
-        </p>
-        <div className="imagenLight">
-          <img
-            id="mainImg"
-            src=""
-          />
         </div>
-        <div
-          className="back"
-	>
+        <div className="imagenLight">
+          <img id="mainImg" src="" />
+        </div>
+        <div id="prevModal" className="next-prev prev">
           &#60;
         </div>
-        <div
-          className="go"
-          >
+        <div id="nextModal" className="next-prev next">
           >
         </div>
-        <input
-          className="carpetastitulo"
-          type="button"
-          value="Imagenes/Galerias/Infantil"
-          id="carpetaInfantil"
-        />
         <nav className="navLight">
+          <p id="infoModal">sesion 13</p>
           <ul>
-            <li className="activeFotos">
-              <i
-                className="fas cambiarsola"
-                onclick="playfotos('intantilTotal', 'imgInfantil')">
-                &#xf04b;
-              </i>
-            </li>
-            <li className="activeFotos2">
-              <i className="fas cambiarsola2" onclick="Stopfotos()">
-                &#xf04c;
-              </i>
-            </li>
+            <li className="play-stop fas">&#xf04b;</li>
+            <li className="play-stop fas">&#xf04c;</li>
           </ul>
         </nav>
         <div className="barrausuario"> </div>

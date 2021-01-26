@@ -13,13 +13,14 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
             <li>
               <a
                 href="#${folder}"
-		onclick="toggleModal(event, '${folder}', ${i})"
+		onclick="toggleModal(event, '${folder}', ${i} , 'paisajes')"
                 >
                 <img
                   src="/images/Galerias/${folder}/img${i}.jpg"
                   class="lazyload"
                 />
-                <div class="new"></div>
+                <div class="new totalModal" data-folder=${folder} ></div>
+		
               </a>
             </li>
        `;
@@ -30,13 +31,13 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
             <li>
               <a
                 href="#animales"
-		onclick="toggleModal(event, 'Animales', ${i})"
+		onclick="toggleModal(event, 'Animales', ${i}, 'animales')"
 		>
                 <img
                   src="/images/Galerias/Animales/img${i}.jpg"
                   class="lazyload"
                 />
-                <div class="new"></div>
+                <div class="new totalModalAnimales" data-folder="Animales" ></div>
               </a>
             </li>
        `;
@@ -46,13 +47,13 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
             <li>
               <a
                 href="#flores"
-		onclick="toggleModal(event, 'flores', ${i})"
+		onclick="toggleModal(event, 'flores', ${i}, 'flores')"
 		>
                 <img
                   src="/images/Galerias/Flores/img${i}.jpg"
                   class="lazyload"
                 />
-                <div class="new"></div>
+                <div class="new totalModalFlores" data-folder="Flores" ></div>
               </a>
             </li>
        `;
