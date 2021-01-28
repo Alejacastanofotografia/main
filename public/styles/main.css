@@ -18,10 +18,11 @@
   --white-color: #eee;
   --black-color: #202020;
   --light-color: hsl(345, 100%, 60%);
-  --font-s-normal: 1.3rem;
-  --font-s-large: 1.8rem;
-  --font-s-big: 2.8rem;
+  --black-rgba: rgba(0,0,0, .9);
   --font-s-extraBig: 3.8rem;
+  --font-s-big: 2.8rem;
+  --font-s-large: 1.8rem;
+  --font-s-normal: 1.3rem;
   --font-s-small: .8rem;
   --main-top: 8rem; }
 
@@ -642,6 +643,10 @@
   align-items: center;
   width: 100%; }
 
+@media (max-width: 1000px) {
+  .menuHeader nav ul {
+    justify-content: space-around; } }
+
 .menuHeader nav ul li {
   padding: 1.3rem 0.4rem 1.2rem 0.4rem;
   border-radius: 8px;
@@ -661,10 +666,15 @@
   text-decoration: none; }
 
 .menuHeader nav ul li .links:hover {
-  transform: scale(0.7);
+  transform: scale(0.95);
   color: var(--light-color);
   border-color: var(--background-main);
   box-shadow: outset; }
+
+@media (max-width: 960px) {
+  .menuHeader nav ul li .links {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem; } }
 
 .menuHeader nav ul li .activeMenu {
   color: var(--light-color);
@@ -673,25 +683,113 @@
   border-top: 1px solid black;
   border-color: #0d0d0d; }
 
-.menuHeader nav ul .wrapperLogo {
+@media (max-width: 1115px) {
+  .menuHeader nav ul li {
+    margin: 0 0.5rem; } }
+
+@media (max-width: 960px) {
+  .menuHeader nav ul li {
+    margin: 0 0.2rem; } }
+
+@media (max-width: 800px) {
+  .menuHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 0 0.5rem 0;
+    background: var(--background-main);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+  .menuHeader .menuMovile {
+    position: relative;
+    padding: 0 1.5rem 0 0; }
+  .menuHeader .menuMovile span {
+    color: var(--white-color);
+    font-size: 2rem; }
+  .menuHeader .menuMovile nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--black-rgba); }
+  .menuHeader .menuMovile nav ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; }
+  .menuHeader .menuMovile nav ul li {
+    padding: 1.3rem 0.4rem 1.2rem 0.4rem;
+    border-radius: 8px;
+    background: var(--main-gradient);
+    z-index: 2;
+    display: block;
+    margin: .6rem 0; }
+  .menuHeader .menuMovile nav ul li .links {
+    padding: 0.8rem;
+    border-radius: 6px;
+    background: var(--background-main);
+    box-shadow: 2px 2px 2px #000;
+    color: var(--white-color);
+    transition: 0.5s;
+    border-left: 1px solid #2b2b2b;
+    text-decoration: none; }
+  .menuHeader .menuMovile nav ul li .links:hover {
+    transform: scale(0.95);
+    color: var(--light-color);
+    border-color: var(--background-main);
+    box-shadow: outset; }
+  .menuHeader .menuMovile nav ul li .activeMenu {
+    color: var(--light-color);
+    box-shadow: none;
+    border-left: 1px solid #0d0d0d;
+    border-top: 1px solid black;
+    border-color: #0d0d0d; }
+  .menuHeader .menuMovile nav .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #aaa;
+    font-weight: bold; } }
+
+.menuHeader .wrapperLogo {
   padding: none;
   margin: none;
   border-radius: none;
   background: var(--brackground-main); }
 
-.menuHeader nav ul .wrapperLogo .Logo {
+.menuHeader .wrapperLogo .Logo {
   text-decoration: none; }
 
-.menuHeader nav ul .wrapperLogo .Logo h1 {
-  margin: 0 3rem;
+.menuHeader .wrapperLogo .Logo h1 {
+  padding: 0 1.5rem;
   color: var(--white-color);
-  text-align: center; }
+  text-align: center;
+  font-size: 2rem; }
 
-.menuHeader nav ul .wrapperLogo .Logo h1 span {
+.menuHeader .wrapperLogo .Logo h1 span {
   padding: 0 0.4rem; }
 
-.menuHeader nav ul .wrapperLogo .Logo h1 span:nth-child(odd) {
+.menuHeader .wrapperLogo .Logo h1 span:nth-child(odd) {
   color: var(--light-color); }
+
+@media (max-width: 1000px) {
+  .menuHeader .wrapperLogo .Logo h1 span {
+    padding: 0 0.3rem; } }
+
+@media (max-width: 500px) {
+  .menuHeader .wrapperLogo .Logo h1 {
+    font-size: 1.2rem;
+    padding: 0 .2rem; } }
 
 .menu {
   display: flex;
@@ -788,6 +886,10 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr; }
+
+@media (max-width: 800px) {
+  .mainSobreMi {
+    grid-template-columns: 1fr; } }
 
 .mainSobreMi .itemSobreMi {
   display: flex;
@@ -995,7 +1097,7 @@
   font-size: 1.2rem; }
 
 .wrapper360 .nav360 .mainNav360 ul li .links360:hover {
-  transform: scale(0.7);
+  transform: scale(0.95);
   color: var(--light-color);
   border-color: var(--background-main);
   box-shadow: outset; }
@@ -1011,7 +1113,8 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin: auto; }
+  margin: auto;
+  padding: 1rem 0 0 0; }
 
 .wrapperSocial nav ul li {
   list-style: none;
@@ -1022,11 +1125,14 @@
   border-radius: 8px;
   background: var(--main-gradient);
   z-index: 2;
-  padding: .8rem 0.4rem .8rem 0.4rem; }
+  padding: 0.4rem 0.4rem 0.2rem 0.4rem; }
 
 .wrapperSocial nav ul li a {
-  font-size: 2rem;
-  text-decoration: none;
+  text-decoration: none; }
+
+.wrapperSocial nav ul li a img {
+  width: 2rem;
+  height: 2rem;
   padding: 0.8rem;
   border-radius: 6px;
   background: var(--background-main);
@@ -1034,27 +1140,31 @@
   color: var(--white-color);
   transition: 0.5s;
   border-left: 1px solid #2b2b2b;
-  padding: 0.3rem .5rem; }
+  padding: 0.6rem; }
 
-.wrapperSocial nav ul li a:hover {
-  transform: scale(0.7);
+.wrapperSocial nav ul li a img:hover {
+  transform: scale(0.95);
   color: var(--light-color);
   border-color: var(--background-main);
   box-shadow: outset; }
 
-.wrapperSocial nav ul li .whatsapp {
-  color: #01e675; }
-
-.wrapperSocial nav ul li .instagram {
-  color: #e8412a; }
-
-.wrapperSocial nav ul li .facebook {
-  color: #415e9b; }
-
 .wrapperSocial p {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   margin: 1rem 0;
-  color: var(--white-color); }
+  text-align: center;
+  color: var(--white-color);
+  font-size: var(--font-s-normal); }
+
+.wrapperSocial p i {
+  font-size: var(--font-s-small); }
+
+.wrapperSocial .creadores {
+  color: var(--white-color);
+  font-size: 0.7rem; }
+
+.wrapperSocial .creadores a {
+  color: var(--white-color);
+  padding: 0 0.2rem; }
 
 #menuGalerias {
   position: fixed;

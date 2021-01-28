@@ -3,6 +3,9 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media(max-width: 800px){
+      grid-template-columns: 1fr;
+    }
     .itemSobreMi {
         @include flexCenterC; 
 	width: 100%;

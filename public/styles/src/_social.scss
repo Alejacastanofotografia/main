@@ -2,6 +2,7 @@
   @include flexCenterC;
   width: 100%;
   margin: auto;
+  padding: 1rem 0 0 0;
   nav {
     ul {
       li {
@@ -9,24 +10,36 @@
         display: inline-block;
         margin: 0 1rem;
         z-index: 2;
-	@include afterGradient;
-        padding: .8rem 0.4rem .8rem 0.4rem;
+        @include afterGradient;
+        padding: 0.4rem 0.4rem 0.2rem 0.4rem;
         a {
-          font-size: 2rem;
           text-decoration: none;
-	  @include beforeGradient;
-          padding: 0.3rem .5rem;
+          img {
+            width: 2rem;
+            height: 2rem;
+            @include beforeGradient;
+            padding: 0.6rem;
+          }
         }
-	.whatsapp{color: #01e675}
-	.instagram{color: #e8412a}
-	.facebook{color: #415e9b}
       }
     }
   }
-  p{
- padding: .5rem 0; 
- margin: 1rem 0;
- color: var(--white-color);
+  p {
+    padding: 0.5rem 0;
+    margin: 1rem 0;
+    text-align: center;
+    color: var(--white-color);
+    font-size: var(--font-s-normal);
+    i {
+      font-size: var(--font-s-small);
+    }
   }
-
+  .creadores {
+    color: var(--white-color);
+    font-size: 0.7rem;
+    a {
+      color: var(--white-color);
+      padding: 0 0.2rem;
+    }
+  }
 }
