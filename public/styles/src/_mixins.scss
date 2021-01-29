@@ -9,11 +9,11 @@
   flex-direction: column;
 }
 
+$left: -4rem;
+$bottom: -4rem;
+$large: 300px;
+$ancho: 0.6rem;
 @mixin left-bar {
-  $left: -4rem;
-  $bottom: -4rem;
-  $large: 300px;
-  $ancho: 0.6rem;
   &:before,
   &:after {
     content: '';
@@ -45,12 +45,18 @@
     width: $ancho;
     z-index: -1;
     bottom: -2rem;
+    @media (max-width: 320px) {
+      height: $large - 100px;
+    }
   }
   &:after {
     top: 99%;
     width: 120%;
     left: -2.5rem;
     height: $ancho;
+    @media (max-width: 320px) {
+      width: $large - 100px;
+    }
   }
 }
 @mixin afterGradient {

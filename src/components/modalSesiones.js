@@ -19,8 +19,12 @@ class ModalSesiones extends React.Component {
         <nav className="navLight">
           <p id="infoModal">sesion 13</p>
           <ul>
-            <li className="play-stop fas">&#xf04b;</li>
-            <li className="play-stop fas">&#xf04c;</li>
+            <i id="play" className="play-stop material-icons">
+              &#xe037;
+            </i>
+            <i id="stop" className="play-stop material-icons hide">
+              &#xe034;
+            </i>
           </ul>
         </nav>
         <div className="barrausuario"> </div>

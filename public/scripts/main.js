@@ -1,40 +1,5 @@
-function parrafosi() {
-  var num = 0;
-  interval = setInterval(functionInterval, 300);
-
-  function functionInterval() {
-    if (num >= 13) {
-      clearInterval(interval);
-      stop();
-    } else {
-      num++;
-      elementoP = document.querySelector(
-        '.fraseSlider i:nth-child(' + num + ')',
-      );
-      elementoP.style.color = '#bbb';
-    }
-  }
-}
-function stop() {
-  var num = 14;
-  interval2 = setInterval(functionInterval2, 300);
-
-  function functionInterval2() {
-    if (num <= 1) {
-      clearInterval(interval2);
-      parrafosi();
-    } else {
-      num--;
-      elementoP = document.querySelector(
-        '.fraseSlider i:nth-child(' + num + ')',
-      );
-      elementoP.style.color = 'transparent';
-    }
-  }
-}
-//parrafosi();
-
 let modal = true,
+  auto = true,
   img,
   folderName,
   infoModal,
@@ -42,13 +7,18 @@ let modal = true,
   totalAll,
   totalAnimales,
   totalFlores,
-  total;
+  total,
+  play,
+  stop,
+  intervalAuto;
 function toggleModal(e, folder, num, paisaje) {
+  play = document.getElementById('play');
+  stop = document.getElementById('stop');
   img = document.getElementById('mainImg');
   infoModal = document.getElementById('infoModal');
   totalAll = document.querySelectorAll('.totalModal').length;
-  totalFlores= document.querySelectorAll('.totalModalFlores').length;
-  totalAnimales= document.querySelectorAll('.totalModalAnimales').length;
+  totalFlores = document.querySelectorAll('.totalModalFlores').length;
+  totalAnimales = document.querySelectorAll('.totalModalAnimales').length;
   if (modal) {
     document.getElementById('modalSesiones').classList.remove('hide');
     modal = false;
@@ -84,8 +54,44 @@ function nextModal() {
 function infoModales(folderName, total) {
   infoModal.innerHTML = `${folderName} ${numModal}/${total}`;
 }
+function stopModal() {
+  if (!auto) {
+    clearInterval(intervalAuto);
+    auto = true;
+    play.classList.remove('hide');
+    stop.classList.add('hide');
+  }
+}
 function listener() {
   document.querySelector('#closeModal').addEventListener('click', toggleModal);
+  document.querySelector('#closeModal').addEventListener('click', stopModal);
+    
   document.querySelector('#prevModal').addEventListener('click', prevModal);
+  document.querySelector('#prevModal').addEventListener('click', stopModal);
+    
   document.querySelector('#nextModal').addEventListener('click', nextModal);
+  document.querySelector('#nextModal').addEventListener('click', stopModal);
 }
+
+function autoModal() {
+  if (auto) {
+    intervalAuto = setInterval(nextModal, 2000);
+    auto = false;
+    play.classList.add('hide');
+    stop.classList.remove('hide');
+  } else {
+    clearInterval(intervalAuto);
+    auto = true;
+    play.classList.remove('hide');
+    stop.classList.add('hide');
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (!modal) {
+    if (e.keyCode == 39) nextModal(); //arrowRight
+    if (e.keyCode == 37) prevModal(); //arrowLeft
+    if (e.keyCode == 27) toggleModal(); //esc
+    if (e.keyCode == 32) autoModal();
+  }
+});

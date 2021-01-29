@@ -2,7 +2,7 @@
   @include flexCenterC;
   flex-wrap: wrap;
   width: 100%;
-  padding: 8rem 0;
+  padding: 4rem 0;
   .wrapper {
     @include flexCenter;
     position: relative;
@@ -17,6 +17,7 @@
       border-radius: 50%;
       z-index: 1;
       transition: 0.5s;
+      margin: .5rem;
       &:before,
       &:after {
         width: 100%;
@@ -50,6 +51,28 @@
         overflow: hidden;
         transition: 0.5s;
       }
+      &:hover .wrapperText p {
+        opacity: 1;
+      }
+      &:hover:after {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      @media(max-width: 800px){
+      width: 200px;
+      height: 200px;
+      }
+      @media(max-width: 660px){
+      width: 160px;
+      height: 160px;
+      }
+      @media(max-width: 530px){
+      width: 160px;
+      height: 160px;
+      }
+      @media(max-width: 360px){
+      width: 100px;
+      height: 100px;
+      }
       .wrapperText {
         @include flexCenter;
         position: absolute;
@@ -70,12 +93,6 @@
           opacity: 0;
           transition: 0.5s;
         }
-      }
-      &:hover .wrapperText p {
-        opacity: 1;
-      }
-      &:hover:after {
-        background: rgba(0, 0, 0, 0.5);
       }
     }
   }

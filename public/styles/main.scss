@@ -1,50 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 * {
-    margin: 0;
-    padding: 0;
+
+  margin: 0;
+  padding: 0;
 }
 $total: 2rem;
 :root {
-    //backgrounds
-    --background-main: #202020;
-    --main-gradient: linear-gradient(
-        to bottom, 
-	hsl(0, 0%, 5%),
-	hsl(0, 0%, 18%)
-    );
-    --main-gradient-right: linear-gradient(
-        to right, 
-	hsl(0, 0%, 5%),
-	hsl(0, 0%, 18%)
-    );
+  //backgrounds
+  --background-main: #202020;
+  --main-gradient: linear-gradient(to bottom, hsl(0, 0%, 5%), hsl(0, 0%, 18%));
+  --main-gradient-right: linear-gradient(
+    to right,
+    hsl(0, 0%, 5%),
+    hsl(0, 0%, 18%)
+  );
 
-    //colors
-    --white-color: #eee;
-    --black-color: #202020;
-    --light-color: hsl(345, 100%, 60%);
-    --black-rgba: rgba(0,0,0, .9);
+  //colors
+  --white-color: #eee;
+  --black-color: #202020;
+  --light-color: hsl(345, 100%, 60%);
+  --black-rgba: rgba(0, 0, 0, 0.9);
 
+  //font-sizes
+  --font-s-extraBig: 3.8rem;
+  --font-s-big: 2.8rem;
+  --font-s-large: 1.8rem;
+  --font-s-normal: 1.3rem;
+  --font-s-small: 0.8rem;
+
+  --main-top: 8rem;
+  @media (max-width: 500px) {
     //font-sizes
-    --font-s-extraBig: 3.8rem;
-    --font-s-big: 2.8rem;
-    --font-s-large: 1.8rem;
-    --font-s-normal: 1.3rem;
-    --font-s-small: .8rem;
+    --font-s-extraBig: 3rem;
+    --font-s-big: 2.3rem;
+    --font-s-large: 1.5rem;
+    --font-s-normal: 1rem;
+    --font-s-small: 0.6rem;
 
-    --main-top: 8rem;
-    
-
+    --main-top: 4rem;
+  }
 }
-@import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu', 'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones';
+@import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu',
+  'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones';
 
 ::-webkit-scrollbar {
-    width: 10px;   
+  width: 10px;
 }
-::-webkit-scrollbar-thumb{
-    background: var(--main-gradient-right);
-    border-radius: 6px;
+::-webkit-scrollbar-thumb {
+  background: var(--main-gradient-right);
+  border-radius: 6px;
 }
-body{
-    background: var(--background-main);
-    letter-spacing: .1rem;
+body {
+  background: var(--background-main);
+  letter-spacing: 0.1rem;
+  font-family: 'Dosis', serif;
 }
-.hide{display: none}
+.hide {
+  display: none;
+}
