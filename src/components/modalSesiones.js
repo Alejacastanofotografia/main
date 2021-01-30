@@ -27,7 +27,7 @@ class ModalSesiones extends React.Component {
             </i>
           </ul>
         </nav>
-        <div className="barrausuario"> </div>
+        <div id="userBar"className="barrausuario"> </div>
       </div>
     );
   }
