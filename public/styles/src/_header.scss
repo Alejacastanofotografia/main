@@ -9,7 +9,8 @@
     width: 100%;
     ul {
       @include flexCenter;
-      width: 100%;
+      justify-content: space-around;
+      width: 100%; 
       @media (max-width: 1000px) {
         justify-content: space-around;
       }
@@ -124,6 +125,10 @@
         }
         @media (max-width: 500px) {
           font-size: 1.2rem;
+	    padding: 0 .2rem;
+        }
+        @media (max-width: 400px) {
+          font-size: 1rem;
 	    padding: 0 .2rem;
         }
       }

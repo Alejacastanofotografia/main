@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');*/
 * {
 
   margin: 0;
@@ -38,6 +38,11 @@ $total: 2rem;
     --font-s-small: 0.6rem;
 
     --main-top: 4rem;
+
+    
+  --background-main: #eee;
+  --white-color: #202020;
+  --black-color: #eee;
   }
 }
 @import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu',

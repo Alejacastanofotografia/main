@@ -66,6 +66,35 @@ function nextModal() {
 function infoModales(folderName, total) {
   infoModal.innerHTML = `${folderName} ${numModal}/${total}`;
 }
+function progress() {
+    userBar.style.width = `${numProgress}%`;
+  numProgress = numProgress + 0.25;
+}
+//iniciar modal automático
+function autoModal() {
+  timeProgress = (parseInt(total) * parseInt(time)) / 400;
+  if (auto) {
+    auto = false;
+    play.classList.add('hide');
+    stop.classList.remove('hide');
+    console.log('play');
+    intervalAuto = setInterval(nextModal, time);
+    intervalProgress = setInterval(progress, timeProgress);
+    intervalCont = setInterval(() => {
+      if (cont < total) {
+        cont++;
+      } else {
+        stopModal();
+	  console.log('detenido')
+      }
+    }, time);
+  } else if(!auto) {
+    clearInterval(intervalAuto);
+    clearInterval(intervalProgress);
+    clearInterval(intervalCont);
+    console.log('stopñ');
+  }
+}
 //detener modal automatico
 function stopModal() {
   if (!auto) {
@@ -81,31 +110,6 @@ function stopModal() {
     console.log(auto)
   }
 }
-function progress() {
-    userBar.style.width = `${numProgress}%`;
-  numProgress = numProgress + 0.25;
-}
-//iniciar modal automático
-function autoModal() {
-  timeProgress = (parseInt(total) * parseInt(time)) / 400;
-  if (auto) {
-    intervalAuto = setInterval(nextModal, time);
-    intervalProgress = setInterval(progress, timeProgress);
-    intervalCont = setInterval(() => {
-      if (cont < total) {
-        cont++;
-      } else {
-        stopModal();
-      }
-    }, time);
-    auto = false;
-    play.classList.add('hide');
-    stop.classList.remove('hide');
-  } else {
-    stopModal();
-  }
-    console.log(auto)
-}
 function listener() {
   document.querySelector('#closeModal').addEventListener('click', toggleModal);
   document.querySelector('#closeModal').addEventListener('click', stopModal);
@@ -115,6 +119,9 @@ function listener() {
 
   document.querySelector('#nextModal').addEventListener('click', nextModal);
   document.querySelector('#nextModal').addEventListener('click', stopModal);
+
+  play.addEventListener('click', autoModal);
+  stop.addEventListener('click', stopModal);
 }
 
 document.addEventListener('keydown', e => {
