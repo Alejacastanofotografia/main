@@ -42,8 +42,8 @@ class Social extends React.Component {
           <a
             href="https://www.flaticon.es/autores/pixel-perfect"
             title="Pixel perfect" target="_blank">
-            Pixel perfect
-          </a>
+            Pixel perfect,
+          </a><a href="https://www.flaticon.com/authors/srip" title="srip" target="_blank">srip</a>
           from
           <a href="https://www.flaticon.es/" title="Flaticon" target="_blank">
             www.flaticon.es

@@ -82,7 +82,7 @@
   box-shadow: 0px 0px 3px #000;
   background: rgba(0,0,0, .5);
   span {
-    color: var(--white-color);
+    color: #fff;
     font-size: 3rem;
   }
   @media(min-width: 800px){
@@ -205,17 +205,17 @@
   transition: 0.5s;
 }
 .new:before {
-  content: url(Imagenes/Iconos/cursor.png);
+  content: url(/images/icon/full-screen.png);
   position: absolute;
   top: 0.3rem;
   right: 1rem;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   opacity: 0;
   transition: 0.5s;
 }
 .new:hover:before {
-  opacity: 0.6;
+  opacity: 0.9;
 }
 /*estilos para movil*/
 @media (max-width: 1024px) {

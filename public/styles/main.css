@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');*/
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
 * {
   margin: 0;
   padding: 0; }
@@ -15,13 +15,16 @@
   --white-color: #eee;
   --black-color: #202020;
   --light-color: hsl(345, 100%, 60%);
-  --black-rgba: rgba(0, 0, 0, 0.9);
+  --black-rgba-media: rgba(0, 0, 0, 0.9);
   --font-s-extraBig: 3.8rem;
   --font-s-big: 2.8rem;
   --font-s-large: 1.8rem;
   --font-s-normal: 1.3rem;
   --font-s-small: 0.8rem;
-  --main-top: 8rem; }
+  --main-top: 8rem;
+  --font-family: 'Yusei Magic', sans-serif;
+  --font-family: 'Open Sans Condensed', sans-serif;
+  --font-family: 'EB Garamond', serif; }
 
 @media (max-width: 500px) {
   :root {
@@ -31,9 +34,16 @@
     --font-s-normal: 1rem;
     --font-s-small: 0.6rem;
     --main-top: 4rem;
-    --background-main: #eee;
+    --background-main: hsl(0, 0%, 80%);
+    --main-gradient: linear-gradient(to bottom, hsl(0, 0%, 65%), hsl(0, 0%, 90%));
+    --main-gradient-right: linear-gradient(
+    to right,
+    hsl(0, 0%, 65%),
+    hsl(0, 0%, 90%)
+  );
     --white-color: #202020;
-    --black-color: #eee; } }
+    --black-color: #eee;
+    --black-rgba-media: rgba(200, 200, 200, 0.9); } }
 
 /*!
  * Photo Sphere Viewer 4.0.7
@@ -672,7 +682,7 @@
   box-shadow: 2px 2px 2px #000;
   color: var(--white-color);
   transition: 0.5s;
-  border-left: 1px solid #2b2b2b;
+  border-left: 1px solid var(--background-main);
   text-decoration: none; }
 
 .menuHeader nav ul li .links:hover {
@@ -725,7 +735,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--black-rgba); }
+    background: var(--black-rgba-media);
+    box-shadow: 2px 2px 2px #222; }
   .menuHeader .menuMovile nav ul {
     display: flex;
     justify-content: center;
@@ -739,7 +750,7 @@
     background: var(--main-gradient);
     z-index: 2;
     display: block;
-    margin: .6rem 0; }
+    margin: .3rem 0; }
   .menuHeader .menuMovile nav ul li .links {
     padding: 0.8rem;
     border-radius: 6px;
@@ -747,7 +758,7 @@
     box-shadow: 2px 2px 2px #000;
     color: var(--white-color);
     transition: 0.5s;
-    border-left: 1px solid #2b2b2b;
+    border-left: 1px solid var(--background-main);
     text-decoration: none; }
   .menuHeader .menuMovile nav ul li .links:hover {
     transform: scale(0.95);
@@ -762,13 +773,13 @@
     border-color: #0d0d0d; }
   .menuHeader .menuMovile nav .close {
     position: absolute;
-    right: 1rem;
+    right: 2rem;
     top: 1rem;
     background: none;
     outline: none;
     border: none;
-    font-size: 1.5rem;
-    color: #aaa;
+    font-size: 2rem;
+    color: var(--white-color);
     font-weight: bold; } }
 
 .menuHeader .wrapperLogo {
@@ -816,6 +827,10 @@
   width: 100%;
   padding: 4rem 0; }
 
+@media (max-width: 450px) {
+  .menu {
+    padding: 1rem 0; } }
+
 .menu .wrapper {
   display: flex;
   justify-content: center;
@@ -850,6 +865,12 @@
   background: var(--main-gradient);
   z-index: -1; }
 
+@media (max-width: 400px) {
+  .menu .wrapper .wrapperImg:before {
+    padding: .2rem;
+    left: -.2rem;
+    top: -.1rem; } }
+
 .menu .wrapper .wrapperImg:after {
   top: 4px;
   padding: 0.2rem;
@@ -862,10 +883,15 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border-top: 4px solid #000;
-  border-left: 2px solid #000;
+  border-top: 4px solid var(--background-main);
+  border-left: 2px solid var(--background-main);
   overflow: hidden;
   transition: 0.5s; }
+
+@media (max-width: 400px) {
+  .menu .wrapper .wrapperImg img {
+    border-top: 1px solid var(--background-main);
+    border-left: 0.5px solid var(--background-main); } }
 
 .menu .wrapper .wrapperImg:hover .wrapperText p {
   opacity: 1; }
@@ -1103,7 +1129,8 @@
 
 .wrapper360 {
   display: grid;
-  grid-template-columns: 70px 1fr; }
+  grid-template-columns: 1fr;
+  position: relative; }
 
 .wrapper360 .main360 {
   position: relative;
@@ -1126,40 +1153,34 @@
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  width: 90%;
-  height: 100%; }
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 80%;
+  padding: 0 .3rem;
+  z-index: 30; }
 
 .wrapper360 .nav360 .mainNav360 ul {
   width: 100%; }
 
 .wrapper360 .nav360 .mainNav360 ul li {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
   list-style: none;
-  padding: 1.3rem 0.4rem 1.2rem 0.4rem;
-  border-radius: 8px;
-  background: var(--main-gradient);
-  z-index: 2;
-  margin: .5rem 0; }
+  margin: 0.5rem 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 3px #000; }
 
 .wrapper360 .nav360 .mainNav360 ul li .links360 {
-  padding: 0.8rem;
-  border-radius: 6px;
-  background: var(--background-main);
-  box-shadow: 2px 2px 2px #000;
-  color: var(--white-color);
-  transition: 0.5s;
-  border-left: 1px solid #2b2b2b;
-  color: var(--white-color);
-  font-size: 1.2rem; }
+  text-shadow: 1px 1px 2px #000; }
 
-.wrapper360 .nav360 .mainNav360 ul li .links360:hover {
-  transform: scale(0.95);
-  color: var(--light-color);
-  border-color: var(--background-main);
-  box-shadow: outset; }
-
-.wrapper360 .nav360 .mainNav360 ul li .links360 img {
-  width: 1.2rem;
-  height: 1.2rem; }
+.wrapper360 .nav360 .mainNav360 ul li .links360 span {
+  color: #fff;
+  font-size: 2rem; }
 
 .wrapperSocial {
   display: flex;
@@ -1194,7 +1215,7 @@
   box-shadow: 2px 2px 2px #000;
   color: var(--white-color);
   transition: 0.5s;
-  border-left: 1px solid #2b2b2b;
+  border-left: 1px solid var(--background-main);
   padding: 0.6rem; }
 
 .wrapperSocial nav ul li a img:hover {
@@ -1309,7 +1330,7 @@
   background: rgba(0, 0, 0, 0.5); }
 
 .allSesMenu span {
-  color: var(--white-color);
+  color: #fff;
   font-size: 3rem; }
 
 @media (min-width: 800px) {
@@ -1426,17 +1447,17 @@
   transition: 0.5s; }
 
 .new:before {
-  content: url(Imagenes/Iconos/cursor.png);
+  content: url(/images/icon/full-screen.png);
   position: absolute;
   top: 0.3rem;
   right: 1rem;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   opacity: 0;
   transition: 0.5s; }
 
 .new:hover:before {
-  opacity: 0.6; }
+  opacity: 0.9; }
 
 /*estilos para movil*/
 @media (max-width: 1024px) {
@@ -1621,8 +1642,8 @@
 
 body {
   background: var(--background-main);
-  letter-spacing: 0.1rem;
-  font-family: 'Dosis', serif; }
+  letter-spacing: .1rem;
+  font-family: var(--font-family); }
 
 .hide {
   display: none; }

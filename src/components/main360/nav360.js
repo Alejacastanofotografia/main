@@ -7,18 +7,8 @@ class Nav360 extends React.Component {
       <nav className="mainNav360">
         <ul>
           <li>
-            <Link className="links360" id="" to="">
-              <i className="fas">&#xf406;</i>
-            </Link>
-          </li>
-          <li>
             <Link className="links360" id="toHome" to="/">
-	      <img src="/images/icon/logo.svg" />
-            </Link>
-          </li>
-          <li>
-            <Link className="links360" id="" to="">
-              <i className="fas">&#xf093;</i>
+              <span className="material-icons">&#xe88a;</span>
             </Link>
           </li>
         </ul>

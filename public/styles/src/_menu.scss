@@ -3,6 +3,9 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 4rem 0;
+  @media(max-width: 450px){
+     padding: 1rem 0; 
+  }
   .wrapper {
     @include flexCenter;
     position: relative;
@@ -33,6 +36,11 @@
         padding: 0.5rem;
         background: var(--main-gradient);
         z-index: -1;
+	@media(max-width: 400px){
+    padding: .2rem;	
+    left: -.2rem;
+    top: -.1rem;
+	}
       }
       &:after {
         top: 4px;
@@ -46,10 +54,15 @@
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
-        border-top: 4px solid #000;
-        border-left: 2px solid #000;
+        border-top: 4px solid var(--background-main);
+        border-left: 2px solid var(--background-main);
         overflow: hidden;
         transition: 0.5s;
+	@media(max-width: 400px ){
+        border-top: 1px solid var(--background-main);
+        border-left: .5px solid var(--background-main);
+         	
+	}
       }
       &:hover .wrapperText p {
         opacity: 1;

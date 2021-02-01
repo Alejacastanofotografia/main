@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 * {
 
   margin: 0;
@@ -19,7 +19,7 @@ $total: 2rem;
   --white-color: #eee;
   --black-color: #202020;
   --light-color: hsl(345, 100%, 60%);
-  --black-rgba: rgba(0, 0, 0, 0.9);
+  --black-rgba-media: rgba(0, 0, 0, 0.9);
 
   //font-sizes
   --font-s-extraBig: 3.8rem;
@@ -29,6 +29,11 @@ $total: 2rem;
   --font-s-small: 0.8rem;
 
   --main-top: 8rem;
+
+  --font-family: 'Yusei Magic', sans-serif;
+  --font-family: 'Open Sans Condensed', sans-serif;
+  --font-family: 'EB Garamond', serif;
+
   @media (max-width: 500px) {
     //font-sizes
     --font-s-extraBig: 3rem;
@@ -40,9 +45,16 @@ $total: 2rem;
     --main-top: 4rem;
 
     
-  --background-main: #eee;
+  --background-main: hsl(0, 0%, 80%);
+  --main-gradient: linear-gradient(to bottom, hsl(0, 0%, 65%), hsl(0, 0%, 90%));
+  --main-gradient-right: linear-gradient(
+    to right,
+    hsl(0, 0%, 65%),
+    hsl(0, 0%, 90%)
+  );
   --white-color: #202020;
   --black-color: #eee;
+  --black-rgba-media: rgba(200, 200, 200, 0.9);
   }
 }
 @import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu',
@@ -57,8 +69,8 @@ $total: 2rem;
 }
 body {
   background: var(--background-main);
-  letter-spacing: 0.1rem;
-  font-family: 'Dosis', serif;
+  letter-spacing: .1rem;
+  font-family: var(--font-family);
 }
 .hide {
   display: none;

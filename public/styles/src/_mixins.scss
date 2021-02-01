@@ -72,7 +72,7 @@ $ancho: 0.6rem;
   box-shadow: 2px 2px 2px #000;
   color: var(--white-color);
   transition: 0.5s;
-  border-left: 1px solid hsl(0, 0%, 17%);
+  border-left: 1px solid var(--background-main);
   &:hover {
     transform: scale(0.95);
     color: var(--light-color);

@@ -32,7 +32,8 @@
 }
 .wrapper360 {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
   .main360 {
     position: relative;
     height: 100vh;
@@ -49,25 +50,32 @@
     }
   }
   .nav360 {
-      @include flexCenterC;
-      justify-content: flex-start;
-    width: 90%;
-    height: 100%;
+    @include flexCenterC;
+    justify-content: flex-start;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 80%;
+    padding: 0 .3rem;
+    z-index: 30;
     .mainNav360 {
       ul {
-	  width: 100%;
+        width: 100%;
         li {
-	    list-style:none;
-	    @include afterGradient;
-	    margin: .5rem 0;
-          .links360 {
-	      @include beforeGradient
-            color: var(--white-color);
-	    font-size: 1.2rem;
-	    img{
-	    width: 1.2rem;
-	    height:1.2rem;
-	    }
+	    @include flexCenter;
+          list-style: none;
+          margin: 0.5rem 0;
+	  width: 2.5rem;
+	  height: 2.5rem;
+	  border-radius: 50%;
+	  box-shadow: 0 0 3px #000;
+          .links360 { 
+
+	    text-shadow: 1px 1px 2px #000;
+            span{
+		color: #fff;
+            font-size: 2rem;
+            }
           }
         }
       }
