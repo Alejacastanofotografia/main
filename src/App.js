@@ -11,6 +11,7 @@ import Contacto from './components/contacto';
 import SobreMi from './components/sobreMi';
 import Social from './components/socialMedia';
 
+
 function App(props) {
   return (
     <Router>
@@ -19,31 +20,28 @@ function App(props) {
           <Main360 />
         </Route>
         <Route path="/sesiones">
-          <Nav />
+          <Nav active="sesionesLink" />
           <Sesiones />
           <Social />
           <ModalSesiones />
         </Route>
-        <Route path="/versesiones">
-          <ModalSesiones />
-        </Route>
         <Route path="/books">
-          <Nav />
+          <Nav active="bookslink" />
           <Books />
           <Social />
         </Route>
         <Route path="/contacto">
-          <Nav />
+          <Nav active="contactoLink" />
           <Contacto />
           <Social />
         </Route>
         <Route path="/sobre_mi">
-          <Nav />
+          <Nav active="sobreMiLink" />
           <SobreMi />
           <Social />
         </Route>
         <Route path="/">
-          <Nav />
+          <Nav active="defaultHome" />
           <Slider />
           <Menu />
           <Home360 />

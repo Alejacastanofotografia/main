@@ -6,13 +6,20 @@ class NavDesktop extends React.Component {
   constructor(props) {
     super(props);
 
-    this.activeCom = this.activeCom.bind(this);
     this.selectSesion = this.sesion.bind(this);
+      this.state= {
+           activeLink: props.activeLink, 
+      }
   }
-sesion(e, total, classNameD, folder, paisajes) {
+  sesion(e, total, classNameD, folder, paisajes) {
     selectSesion(e, total, classNameD, folder, paisajes);
   }
-  
+  componentDidMount() {
+        document.getElementById(this.state.activeLink).classList.add('activeMenu')
+  }
+  componentWillUnmount() {
+        document.getElementById(this.state.activeLink).classList.remove('activeMenu')
+  }
   activeCom(e, menu) {
     let link = document.querySelectorAll('.links');
     link.forEach(links => {

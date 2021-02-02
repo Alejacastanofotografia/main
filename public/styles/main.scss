@@ -20,6 +20,7 @@ $total: 2rem;
   --black-color: #202020;
   --light-color: hsl(345, 100%, 60%);
   --black-rgba-media: rgba(0, 0, 0, 0.9);
+  --color-neutro: #888;
 
   //font-sizes
   --font-s-extraBig: 3.8rem;
@@ -39,18 +40,18 @@ $total: 2rem;
     --font-s-extraBig: 3rem;
     --font-s-big: 2.3rem;
     --font-s-large: 1.5rem;
-    --font-s-normal: 1rem;
+    --font-s-normal: 1.2rem;
     --font-s-small: 0.6rem;
 
     --main-top: 4rem;
 
     
-  --background-main: hsl(0, 0%, 80%);
-  --main-gradient: linear-gradient(to bottom, hsl(0, 0%, 65%), hsl(0, 0%, 90%));
+  --background-main: hsl(0, 0%, 90%);
+  --main-gradient: linear-gradient(to bottom, hsl(0, 0%, 80%), hsl(0, 0%, 100%));
   --main-gradient-right: linear-gradient(
     to right,
-    hsl(0, 0%, 65%),
-    hsl(0, 0%, 90%)
+    hsl(0, 0%, 80%),
+    hsl(0, 0%, 100%)
   );
   --white-color: #202020;
   --black-color: #eee;
@@ -58,7 +59,7 @@ $total: 2rem;
   }
 }
 @import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu',
-  'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones';
+  'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones', 'src/contacto';
 
 ::-webkit-scrollbar {
   width: 10px;
