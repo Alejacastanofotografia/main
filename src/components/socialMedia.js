@@ -9,7 +9,7 @@ class Social extends React.Component {
             <li>
               <a
                 className="itemSocial whatsapp"
-                href="https://api.whatsapp.com/send?phone=573148582037&amp;text=From:&nbsp;alejacastanofotografía.com"
+                href="https://api.whatsapp.com/send?phone=573148582037&amp;"
                 target="_blank">
                 <img src="/images/icon/whatsapp.svg" title="whatsapp" />
               </a>

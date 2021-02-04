@@ -29,12 +29,21 @@ $ancho: 0.6rem;
     height: $large;
     background: var(--main-gradient-right);
     left: $left + 1rem;
+    @media (max-width: 800px) {
+      left: -1.5rem;
+      bottom: -2rem;
+    }
   }
   &:after {
     width: $large;
     height: $ancho;
     background: var(--main-gradient);
     bottom: $bottom + 1rem;
+    @media (max-width: 800px) {
+      bottom: -1.5rem;
+      left: -2rem;
+      width: 100%;
+    }
   }
 }
 @mixin left-bar-0 {

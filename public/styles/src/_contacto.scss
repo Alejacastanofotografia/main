@@ -5,6 +5,7 @@
   height: 100vh;
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
+    height: auto;
   }
   .itemContacto {
     @include flexCenterC;
@@ -12,10 +13,14 @@
     height: 100%;
   }
   .formContacto {
+      @include flexCenterC;
+      @media(max-width: 800px){
+         padding: 0 0 3rem 0; 
+      }
     form {
+      position: relative;
       @include flexCenterC;
       @include left-bar;
-      position: relative;
       width: 80%;
       input,
       textarea {
@@ -39,15 +44,15 @@
     }
   }
   .textContacto {
+      @media (max-width: 800px) {
+        padding: var(--main-top) 0 0 0;
+      }
     h3 {
       @include title;
     }
     p {
       @include parraf;
       width: 80%;
-      @media (max-width: 800px) {
-        padding: var(--main-top) 0 0 0;
-      }
     }
   }
 }
