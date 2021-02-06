@@ -33,7 +33,7 @@ class Social extends React.Component {
           </ul>
         </nav>
         <p>
-          Alejacastañofotografia 2021
+          Fotografía Aleja Castaño 2021
           <br />
           <i>Todos los derechos reservados</i>
         </p>

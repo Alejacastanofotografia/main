@@ -5,6 +5,9 @@ class Contacto extends React.Component {
     return (
       <div id="contacto" className="mainContacto">
         <div className="itemContacto textContacto">
+	<div>
+	  <img src="/images/background/violeta.png"/>
+	</div>
 	  <h3>Contacto</h3>
           <p>
             Puedes contactarme a través de mis redes sociales o ingresar tu

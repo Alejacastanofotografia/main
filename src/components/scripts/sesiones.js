@@ -1,5 +1,5 @@
 export function selectSesion(e, total, classNameD, folder, paisajes) {
-    if(folder === 'Adulto') console.log('entramos al adulto');
+  if (folder === 'Adulto') console.log('entramos al adulto');
   setTimeout(() => {
     let wrapper = document.querySelector('#mainSesiones');
     let wrapper2 = document.querySelector('#mainSesionesAnimales');
@@ -8,6 +8,16 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
     wrapper2.innerHTML = '';
     wrapper3.innerHTML = '';
     wrapper.setAttribute('class', classNameD);
+    let desktopImg = '/img';
+    let mobileImg = '/media/img';
+    let responsive;
+
+    if (window.screen.width >= 420) {
+	responsive = desktopImg
+    } else {
+	responsive = mobileImg
+    }
+
     for (let i = 1; i <= total; i++) {
       wrapper.innerHTML += `
             <li>
@@ -16,7 +26,7 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
 		onclick="toggleModal(event, '${folder}', ${i} , 'paisajes')"
                 >
                 <img
-                  src="/images/Galerias/${folder}/img${i}.jpg"
+                  data-src="/images/Galerias/${folder}${responsive}${i}.jpg"
                   class="lazyload"
                 />
                 <div class="new totalModal" data-folder=${folder} ></div>
@@ -26,7 +36,7 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
        `;
     }
     if (paisajes) {
-      for (let i = 1; i <= 11; i++) {
+      for (let i = 1; i <= 12; i++) {
         wrapper2.innerHTML += `
             <li>
               <a
@@ -34,7 +44,7 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
 		onclick="toggleModal(event, 'Animales', ${i}, 'animales')"
 		>
                 <img
-                  src="/images/Galerias/Animales/img${i}.jpg"
+                  data-src="/images/Galerias/Animales${responsive}${i}.jpg"
                   class="lazyload"
                 />
                 <div class="new totalModalAnimales" data-folder="Animales" ></div>
@@ -50,10 +60,10 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
 		onclick="toggleModal(event, 'flores', ${i}, 'flores')"
 		>
                 <img
-                  src="/images/Galerias/Flores/img${i}.jpg"
+                  data-src="/images/Galerias/flores${responsive}${i}.jpg"
                   class="lazyload"
                 />
-                <div class="new totalModalFlores" data-folder="Flores" ></div>
+                <div class="new totalModalFlores" data-folder="flores" ></div>
               </a>
             </li>
        `;
@@ -61,4 +71,3 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
     }
   }, 300);
 }
-

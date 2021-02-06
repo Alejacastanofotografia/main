@@ -720,7 +720,7 @@
     padding: 1rem 0 0.5rem 0;
     background: var(--background-main);
     z-index: 100;
-    box-shadow: 2px 2px 2px var(--color-neutro);
+    box-shadow: 2px 2px 5px var(--color-neutro);
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -737,8 +737,10 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     background: var(--black-rgba-media);
-    box-shadow: 2px 2px 2px #222; }
+    box-shadow: 2px 2px 2px #222;
+    overflow: auto; }
   .menuHeader .menuMovile nav ul {
     display: flex;
     justify-content: center;
@@ -774,7 +776,7 @@
     border-top: 1px solid black;
     border-color: #0d0d0d; }
   .menuHeader .menuMovile nav .close {
-    position: absolute;
+    position: fixed;
     right: 2rem;
     top: 1rem;
     background: none;
@@ -1273,7 +1275,7 @@
 
 #menuGalerias:hover {
   width: 30%;
-  z-index: 50; }
+  z-index: 150; }
 
 #menuGalerias .MenuGaleriasAfter {
   background: rgba(0, 0, 0, 0.3);
@@ -1284,11 +1286,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow: auto; }
 
 @media (max-width: 800px) {
   #menuGalerias .MenuGaleriasAfter {
-    background: rgba(0, 0, 0, 0.6); } }
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: flex-start; } }
+
+@media (max-width: 800px) and (orientation: landscape) {
+  #menuGalerias .MenuGaleriasAfter {
+    height: 80%; } }
 
 #menuGalerias .MenuGaleriasAfter ul {
   display: flex;
@@ -1314,7 +1322,8 @@
 @media (max-width: 800px) {
   #menuGalerias .MenuGaleriasAfter ul li,
   #menuGalerias .MenuGaleriasAfter ul h3 {
-    color: #fff; } }
+    color: #fff;
+    box-shadow: .5px .5px 2px #222; } }
 
 #menuGalerias .MenuGaleriasAfter ul h3 {
   display: none; }
@@ -1340,16 +1349,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 2;
+    z-index: 150;
     transition: 1s;
     animation: cambiarfondomenu 30s infinite; }
   #menuGalerias:hover {
-    width: 100%;
-    z-index: 50; } }
+    width: 100%; } }
 
 .allSesMenu {
   position: fixed;
-  bottom: 2rem;
+  bottom: .5rem;
   left: 45%;
   z-index: 500;
   box-shadow: 0px 0px 3px #000;
@@ -1790,7 +1798,81 @@
 
 @media (max-width: 800px) {
   .mainContacto .textContacto {
-    padding: var(--main-top) 0 0 0; } }
+    padding: var(--main-top) 0 0 0;
+    width: 90%; } }
+
+.mainContacto .textContacto div {
+  display: none;
+  margin: auto;
+  width: 443px;
+  height: 363px;
+  margin: 0 0 .5rem 0;
+  position: relative; }
+
+.mainContacto .textContacto div:before, .mainContacto .textContacto div:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 1rem;
+  bottom: -6rem;
+  left: -4rem;
+  bottom: -4rem; }
+
+.mainContacto .textContacto div:before {
+  width: 0.6rem;
+  height: 300px;
+  background: var(--main-gradient-right);
+  left: -3rem; }
+
+@media (max-width: 800px) {
+  .mainContacto .textContacto div:before {
+    left: -1.5rem;
+    bottom: -2rem; } }
+
+.mainContacto .textContacto div:after {
+  width: 300px;
+  height: 0.6rem;
+  background: var(--main-gradient);
+  bottom: -3rem; }
+
+@media (max-width: 800px) {
+  .mainContacto .textContacto div:after {
+    bottom: -1.5rem;
+    left: -2rem;
+    width: 100%; } }
+
+.mainContacto .textContacto div:before {
+  left: -1rem;
+  width: 0.6rem;
+  z-index: -1;
+  bottom: -2rem; }
+
+@media (max-width: 320px) {
+  .mainContacto .textContacto div:before {
+    height: 200px; } }
+
+.mainContacto .textContacto div:after {
+  top: 99%;
+  width: 120%;
+  left: -2.5rem;
+  height: 0.6rem; }
+
+@media (max-width: 320px) {
+  .mainContacto .textContacto div:after {
+    width: 200px; } }
+
+@media (max-width: 800px) {
+  .mainContacto .textContacto div {
+    display: block; } }
+
+@media (max-width: 450px) {
+  .mainContacto .textContacto div {
+    width: 300px;
+    height: 245px; } }
+
+.mainContacto .textContacto div img {
+  width: 100%;
+  height: 100%; }
 
 .mainContacto .textContacto h3 {
   color: var(--white-color);

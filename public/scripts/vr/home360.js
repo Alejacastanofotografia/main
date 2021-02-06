@@ -6,11 +6,11 @@ let changeImg = true;
 function change() {
   if (changeImg) {
     viewer
-      .setPanorama('https://edcas804.github.io/360/img1.jpg')
+      .setPanorama(imgHome2)
       .then(() => (changeImg = false));
   } else {
     viewer
-      .setPanorama('https://edcas804.github.io/360/img2.jpg')
+      .setPanorama(imgHome)
       .then(() => (changeImg = true));
   }
 }
@@ -68,8 +68,8 @@ window.onload = () => {
 };
 
 function call360() {
-  return setTimeout(start360, 300);
+  return setTimeout(start360, 50);
 }
 function reloadMain() {
-  setTimeout(() => location.reload(), 1000);
+  setTimeout(() => location.reload(), 50);
 }
