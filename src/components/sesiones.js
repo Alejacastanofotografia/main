@@ -58,7 +58,7 @@ class Sesiones extends React.Component {
                 }>
                 Prequinces
               </li>
-              <li onClick={e => this.selectSesion(e, 10, 'galeria', 'Quinces')}>
+              <li onClick={e => this.selectSesion(e, 12, 'galeria', 'Quinces')}>
                 Quinces
               </li>
               <li

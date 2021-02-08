@@ -712,6 +712,9 @@
   .menuHeader nav ul li {
     margin: 0 0.2rem; } }
 
+.menuHeader nav ul .hide {
+  display: none; }
+
 @media (max-width: 800px) {
   .menuHeader {
     position: fixed;
@@ -754,7 +757,7 @@
     background: var(--main-gradient);
     z-index: 2;
     display: block;
-    margin: .3rem 0; }
+    margin: 0.3rem 0; }
   .menuHeader .menuMovile nav ul li .links {
     padding: 0.8rem;
     border-radius: 6px;
@@ -775,6 +778,8 @@
     border-left: 1px solid #0d0d0d;
     border-top: 1px solid black;
     border-color: #0d0d0d; }
+  .menuHeader .menuMovile nav ul .hide {
+    display: none; }
   .menuHeader .menuMovile nav .close {
     position: fixed;
     right: 2rem;
@@ -814,12 +819,12 @@
 @media (max-width: 500px) {
   .menuHeader .wrapperLogo .Logo h1 {
     font-size: 1.2rem;
-    padding: 0 .2rem; } }
+    padding: 0 0.2rem; } }
 
 @media (max-width: 400px) {
   .menuHeader .wrapperLogo .Logo h1 {
     font-size: 1rem;
-    padding: 0 .2rem; } }
+    padding: 0 0.2rem; } }
 
 .menu {
   display: flex;
@@ -1458,14 +1463,14 @@
   transition: 1s; }
 
 .galeria img {
-  width: 360px;
+  width: 400px;
   /*medida global de la imagen*/
-  height: 240px; }
+  height: 300px; }
 
 .galeriaV img {
-  height: 350px;
+  height: 400px;
   /*medida global de la imagen*/
-  width: 245px; }
+  width: 300px; }
 
 .galeria li:hover img,
 .galeriaV li:hover img {
@@ -1860,10 +1865,6 @@
 @media (max-width: 320px) {
   .mainContacto .textContacto div:after {
     width: 200px; } }
-
-@media (max-width: 800px) {
-  .mainContacto .textContacto div {
-    display: block; } }
 
 @media (max-width: 450px) {
   .mainContacto .textContacto div {

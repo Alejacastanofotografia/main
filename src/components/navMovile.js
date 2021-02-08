@@ -99,7 +99,7 @@ class navMovile extends React.Component {
                   Sesiones
                 </Link>
               </li>
-              <li>
+              <li className="hide">
                 <Link
                   className="links"
                   to="/books"
@@ -126,7 +126,7 @@ class navMovile extends React.Component {
                   Sobre Mí
                 </Link>
               </li>
-              <li>
+              <li className="hide">
                 <Link className="links" to="/360" id="link360">
                   360
                 </Link>
