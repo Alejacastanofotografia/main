@@ -28,10 +28,20 @@ function toggleModal(e, folder, num, paisaje) {
   totalAll = document.querySelectorAll('.totalModal').length;
   totalFlores = document.querySelectorAll('.totalModalFlores').length;
   totalAnimales = document.querySelectorAll('.totalModalAnimales').length;
+    
+
+    let desktopImg = '/img';
+    let mobileImg = '/media/img';
+    if (window.screen.width >= 420) {
+	responsive = desktopImg
+    } else {
+	responsive = mobileImg
+    }
+    
   if (modal) {
     document.getElementById('modalSesiones').classList.remove('hide');
     modal = false;
-    if (folder) img.src = `/images/Galerias/${folder}/img${num}.jpg`;
+    if (folder) img.src = `/images/Galerias/${folder}${responsive}${num}.jpg`;
   } else {
     document.getElementById('modalSesiones').classList.add('hide');
     modal = true;

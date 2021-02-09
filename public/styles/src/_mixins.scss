@@ -127,6 +127,10 @@ $ancho: 0.6rem;
     height: 100%;
     z-index: -1;
   }
+  &:focus{
+     border: 2px solid var(--light-color); 
+    color: var(--light-color);
+  }
 }
 @mixin title {
   color: var(--white-color);

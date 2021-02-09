@@ -37,6 +37,9 @@
         &::placeholder {
           color: var(--color-neutro);
         }
+	&:focus{
+           border: 2px solid var(--light-color);	
+	}
       }
       button {
         @include button;
