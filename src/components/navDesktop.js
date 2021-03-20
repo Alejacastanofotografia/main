@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {selectSesion} from './scripts/sesiones.js';
+import {changeTheme} from './scripts/theme.js';
 
 class NavDesktop extends React.Component {
   constructor(props) {
@@ -109,6 +110,9 @@ class NavDesktop extends React.Component {
               <Link className="links " to="/360" id="link360">
                 360
               </Link>
+            </li>
+            <li className="dark-light" onClick={() => changeTheme} id="dark-light">
+               dark 
             </li>
           </ul>
         </nav>

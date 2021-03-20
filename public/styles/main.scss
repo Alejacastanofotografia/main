@@ -31,9 +31,7 @@ $total: 2rem;
 
   --main-top: 8rem;
 
-  --font-family: 'Yusei Magic', sans-serif;
-  --font-family: 'Open Sans Condensed', sans-serif;
-  --font-family: 'EB Garamond', serif;
+--font-family: 'EB Garamond', serif;
 
   @media (max-width: 500px) {
     //font-sizes
@@ -59,7 +57,7 @@ $total: 2rem;
   }
 }
 @import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu',
-  'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones', 'src/contacto';
+  'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones', 'src/contacto', 'src/modalError';
 
 ::-webkit-scrollbar {
   width: 10px;

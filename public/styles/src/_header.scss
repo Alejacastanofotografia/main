@@ -54,7 +54,7 @@
     padding: 1rem 0 0.5rem 0;
     background: var(--background-main);
     z-index: 100;
-    box-shadow: 2px 2px 5px var(--color-neutro);
+    box-shadow: 2px 2px 5px #000;
     @include flexCenter;
     justify-content: space-between;
     .menuMovile {
@@ -71,7 +71,7 @@
         width: 100%;
         height: 100%;
         background: var(--black-rgba-media);
-        box-shadow: 2px 2px 2px #222;
+        box-shadow: 2px 2px 2px #000;
         overflow: auto;
         ul {
           @include flexCenterC;

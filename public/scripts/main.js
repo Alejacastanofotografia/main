@@ -28,16 +28,15 @@ function toggleModal(e, folder, num, paisaje) {
   totalAll = document.querySelectorAll('.totalModal').length;
   totalFlores = document.querySelectorAll('.totalModalFlores').length;
   totalAnimales = document.querySelectorAll('.totalModalAnimales').length;
-    
 
-    let desktopImg = '/img';
-    let mobileImg = '/media/img';
-    if (window.screen.width >= 420) {
-	responsive = desktopImg
-    } else {
-	responsive = mobileImg
-    }
-    
+  let desktopImg = '/img';
+  let mobileImg = '/media/img';
+  if (window.screen.width >= 420) {
+    responsive = desktopImg;
+  } else {
+    responsive = mobileImg;
+  }
+
   if (modal) {
     document.getElementById('modalSesiones').classList.remove('hide');
     modal = false;
@@ -77,7 +76,7 @@ function infoModales(folderName, total) {
   infoModal.innerHTML = `${folderName} ${numModal}/${total}`;
 }
 function progress() {
-    userBar.style.width = `${numProgress}%`;
+  userBar.style.width = `${numProgress}%`;
   numProgress = numProgress + 0.25;
 }
 //iniciar modal automático
@@ -95,10 +94,10 @@ function autoModal() {
         cont++;
       } else {
         stopModal();
-	  console.log('detenido')
+        console.log('detenido');
       }
     }, time);
-  } else if(!auto) {
+  } else if (!auto) {
     clearInterval(intervalAuto);
     clearInterval(intervalProgress);
     clearInterval(intervalCont);
@@ -115,9 +114,9 @@ function stopModal() {
     cont = 1;
     play.classList.remove('hide');
     stop.classList.add('hide');
-    userBar.style.width = '1px'; 
-      numProgress = 0;
-    console.log(auto)
+    userBar.style.width = '1px';
+    numProgress = 0;
+    console.log(auto);
   }
 }
 function listener() {
@@ -133,12 +132,15 @@ function listener() {
   play.addEventListener('click', autoModal);
   stop.addEventListener('click', stopModal);
 }
-
+//dark-light theme
 document.addEventListener('keydown', e => {
   if (!modal) {
-    if (e.keyCode == 39) nextModal(); stopModal(); //arrowRight
-    if (e.keyCode == 37) prevModal();stopModal(); //arrowLeft
-    if (e.keyCode == 27) toggleModal();stopModal(); //esc
+    if (e.keyCode == 39) nextModal();
+    stopModal(); //arrowRight
+    if (e.keyCode == 37) prevModal();
+    stopModal(); //arrowLeft
+    if (e.keyCode == 27) toggleModal();
+    stopModal(); //esc
     if (e.keyCode == 32) autoModal();
   }
 });

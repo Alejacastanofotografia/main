@@ -46,6 +46,9 @@
     }
     p {
       @include parraf;
+	  @media(max-width: 450px){
+        width: 90%;
+	  }
     }
   }
 }

@@ -73,7 +73,7 @@ class navMovile extends React.Component {
           </Link>
         </div>
         <div className="menuMovile">
-          <div class="material-icons" onClick={this.toggleMenu}>
+          <div className="material-icons" onClick={this.toggleMenu}>
             <span>&#xe5d2;</span>
           </div>
           <nav className="hide" id="navMovile">
@@ -130,6 +130,9 @@ class navMovile extends React.Component {
                 <Link className="links" to="/360" id="link360">
                   360
                 </Link>
+              </li>
+              <li className="dark-light">
+                  Dark 
               </li>
             </ul>
           </nav>

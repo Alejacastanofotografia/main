@@ -1,5 +1,6 @@
 import React from 'react';
-import {newContact, ff} from '../db';
+import ModalError from './modalError';
+import {newContact, ff} from './scripts/db';
 
 class Contacto extends React.Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class Contacto extends React.Component {
   }
 
   componentDidMount() {
-    this.input.current.focus();
   }
   handleChange(event) {
     const {name, value} = event.target;
@@ -37,6 +37,7 @@ class Contacto extends React.Component {
     };
     if (this.state.name === null || this.state.name === '') {
       alert('el campo nombre es requerido');
+	document.querySelectorAll('.wrapperError')[0].classList.remove('hide')
     } else if (this.state.telefono === null || this.state.telefono === '') {
       alert('el campo telefono es requerido');
     } else if (isNaN(this.state.telefono)) {
@@ -90,6 +91,7 @@ class Contacto extends React.Component {
             <button className="btn">Enviar</button>
           </form>
         </div>
+	<ModalError />
       </div>
     );
   }
