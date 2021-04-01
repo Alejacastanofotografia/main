@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/auth';
 import 'firebase/analytics';
 
 var firebaseConfig = {
@@ -13,8 +14,13 @@ var firebaseConfig = {
   measurementId: 'G-EZ17N33RF1',
 };
 // Initialize Firebase
+
 const fb = firebase.initializeApp(firebaseConfig);
+
+firebase.auth().signInAnonymously().then(() => console.log('anonimuos')).catch( error => console.log(error.message, error.code));
+
 firebase.analytics();
+
 export const ff = firebase.firestore;
 
 export const db = fb.firestore();
@@ -24,7 +30,7 @@ export const newC = ()=>{
 }
 export const newContact = (data) => {
   db.collection('contact')
-    .doc('0q0DJ9luw63otYq0S1VS')
+    .doc(data.name)
     .set(data)
-    .then(() => console.log('datos escritos con id'));
+    .then(() => alert('Muchas gracias por ingresar los datos ' + data.name +  '!'));
 };

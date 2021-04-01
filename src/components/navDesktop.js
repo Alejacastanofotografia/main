@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import {selectSesion} from './scripts/sesiones.js';
 import {changeTheme} from './scripts/theme.js';
 
@@ -8,18 +8,24 @@ class NavDesktop extends React.Component {
     super(props);
 
     this.selectSesion = this.sesion.bind(this);
-      this.state= {
-           activeLink: props.activeLink, 
-      }
+    this.theme= this.theme.bind(this);
+    this.state = {
+      activeLink: props.activeLink,
+    };
   }
   sesion(e, total, classNameD, folder, paisajes) {
     selectSesion(e, total, classNameD, folder, paisajes);
   }
+  theme(){
+    changeTheme();
+  }
   componentDidMount() {
-        document.getElementById(this.state.activeLink).classList.add('activeMenu')
+    document.getElementById(this.state.activeLink).classList.add('activeMenu');
   }
   componentWillUnmount() {
-        document.getElementById(this.state.activeLink).classList.remove('activeMenu')
+    document
+      .getElementById(this.state.activeLink)
+      .classList.remove('activeMenu');
   }
   activeCom(e, menu) {
     let link = document.querySelectorAll('.links');
@@ -57,7 +63,7 @@ class NavDesktop extends React.Component {
                 Sesiones
               </Link>
             </li>
-          <li className="hide">
+            <li className="hide">
               <Link
                 className="links"
                 to="/books"
@@ -65,7 +71,7 @@ class NavDesktop extends React.Component {
                 onClick={this.activeCom}>
                 Books
               </Link>
-            </li>  
+            </li>
             <li className="wrapperLogo">
               <Link
                 className="Logo"
@@ -111,9 +117,13 @@ class NavDesktop extends React.Component {
                 360
               </Link>
             </li>
-            <li className="dark-light" onClick={() => changeTheme} id="dark-light">
-               dark 
-            </li>
+            <button
+              className="dark-light material-icons rotate"
+              onClick={this.theme}
+		      title="Cambiar tema"
+              id="dark-light">
+              &#xe430;
+            </button>
           </ul>
         </nav>
       </header>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {selectSesion} from './scripts/sesiones.js';
+import {changeTheme} from './scripts/theme.js';
 
 class navMovile extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class navMovile extends React.Component {
 
     this.activeCom = this.activeCom.bind(this);
     this.selectSesion = this.sesion.bind(this);
-    this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleMenuEllipse = this.toggleMenuEllipse.bind(this);
+    this.theme = this.theme.bind(this);
     this.state = {
       toggle: true,
     };
@@ -17,6 +19,9 @@ class navMovile extends React.Component {
     selectSesion(e, total, classNameD, folder, paisajes);
   }
 
+  theme() {
+    changeTheme();
+  }
   activeCom(e, menu) {
     let link = document.querySelectorAll('.links');
     link.forEach(links => {
@@ -30,22 +35,12 @@ class navMovile extends React.Component {
       document.querySelector('#defaultHome').classList.add('activeMenu');
     }
     if (!menu) {
-      this.toggleMenu();
+      this.toggleMenuEllipse();
     }
   }
 
-  toggleMenu() {
-    if (this.state.toggle) {
-      document.querySelector('#navMovile').classList.remove('hide');
-      this.setState({
-        toggle: false,
-      });
-    } else {
-      document.querySelector('#navMovile').classList.add('hide');
-      this.setState({
-        toggle: true,
-      });
-    }
+  toggleMenuEllipse() {
+    document.querySelector('#navMovile').classList.toggle('hide-ellipse');
   }
   render() {
     return (
@@ -73,11 +68,11 @@ class navMovile extends React.Component {
           </Link>
         </div>
         <div className="menuMovile">
-          <div className="material-icons" onClick={this.toggleMenu}>
+          <div className="material-icons" onClick={this.toggleMenuEllipse}>
             <span>&#xe5d2;</span>
           </div>
-          <nav className="hide" id="navMovile">
-            <button className="close" onClick={this.toggleMenu}>
+          <nav className="ellipse hide-ellipse" id="navMovile">
+            <button className="close" onClick={this.toggleMenuEllipse}>
               x
             </button>
             <ul>
@@ -131,9 +126,12 @@ class navMovile extends React.Component {
                   360
                 </Link>
               </li>
-              <li className="dark-light">
-                  Dark 
-              </li>
+              <button
+                className="dark-light material-icons rotate"
+                onClick={this.theme}
+                id="dark-light">
+                &#xe430;
+              </button>
             </ul>
           </nav>
         </div>

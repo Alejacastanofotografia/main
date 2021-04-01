@@ -12,10 +12,10 @@
     hsl(0, 0%, 5%),
     hsl(0, 0%, 18%)
   );
-  --white-color: #eee;
+  --white-color: #ccc;
   --black-color: #202020;
   --light-color: hsl(345, 100%, 60%);
-  --black-rgba-media: rgba(0, 0, 0, 0.9);
+  --black-rgba-media: rgba(10, 10, 10, 0.9);
   --color-neutro: #888;
   --font-s-extraBig: 3.8rem;
   --font-s-big: 2.8rem;
@@ -32,17 +32,7 @@
     --font-s-large: 1.5rem;
     --font-s-normal: 1.2rem;
     --font-s-small: 0.6rem;
-    --main-top: 4rem;
-    --background-main: hsl(0, 0%, 90%);
-    --main-gradient: linear-gradient(to bottom, hsl(0, 0%, 80%), hsl(0, 0%, 100%));
-    --main-gradient-right: linear-gradient(
-    to right,
-    hsl(0, 0%, 80%),
-    hsl(0, 0%, 100%)
-  );
-    --white-color: #202020;
-    --black-color: #eee;
-    --black-rgba-media: rgba(200, 200, 200, 0.9); } }
+    --main-top: 4rem; } }
 
 /*!
  * Photo Sphere Viewer 4.0.7
@@ -647,7 +637,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1rem 0 0.5rem 0;
+  padding: 0.1rem 0 0.1rem 0;
   background: var(--background-main);
   z-index: 100; }
 
@@ -713,6 +703,22 @@
 .menuHeader nav ul .hide {
   display: none; }
 
+.menuHeader nav ul .dark-light {
+  background: none;
+  position: fixed;
+  bottom: 10%;
+  right: 0.3rem;
+  border: none;
+  outline: none;
+  color: #bf4040;
+  font-size: 1.2rem;
+  transition: 1s;
+  z-index: 2000;
+  background: var(--black-color);
+  box-shadow: 0px 0px 6px var(--color-neutro);
+  border-radius: 50%;
+  padding: 1rem; }
+
 @media (max-width: 800px) {
   .menuHeader {
     position: fixed;
@@ -741,7 +747,10 @@
     height: 100%;
     background: var(--black-rgba-media);
     box-shadow: 2px 2px 2px #000;
-    overflow: auto; }
+    padding-top: 3rem;
+    overflow: auto;
+    border-radius: 0 0 0 50%;
+    transition: 2s; }
   .menuHeader .menuMovile nav ul {
     display: flex;
     justify-content: center;
@@ -755,7 +764,9 @@
     background: var(--main-gradient);
     z-index: 2;
     display: block;
-    margin: 0.3rem 0; }
+    margin: 0.3rem 0;
+    padding: none;
+    background: none; }
   .menuHeader .menuMovile nav ul li .links {
     padding: 0.8rem;
     border-radius: 6px;
@@ -764,7 +775,12 @@
     color: var(--white-color);
     transition: 0.5s;
     border-left: 1px solid var(--background-main);
-    text-decoration: none; }
+    text-decoration: none;
+    padding: none;
+    background: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #000; }
   .menuHeader .menuMovile nav ul li .links:hover {
     transform: scale(0.95);
     color: var(--light-color);
@@ -778,6 +794,9 @@
     border-color: #0d0d0d; }
   .menuHeader .menuMovile nav ul .hide {
     display: none; }
+  .menuHeader .menuMovile nav ul .dark-light {
+    position: relative;
+    border: none; }
   .menuHeader .menuMovile nav .close {
     position: fixed;
     right: 2rem;
@@ -1264,7 +1283,25 @@
   flex-direction: column;
   z-index: 2;
   transition: 1s;
-  animation: cambiarfondomenu 30s infinite; }
+  animation: cambiarfondomenu 30s infinite;
+  overflow: hidden; }
+
+@media (max-width: 800px) {
+  #menuGalerias {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    justify-content: center;
+    border-radius: 0 50% 0 0;
+    align-items: center;
+    flex-direction: column;
+    z-index: 150;
+    transition: 1s;
+    animation: none;
+    background: rgba(0, 0, 0, 0.9); }
+  #menuGalerias:hover {
+    width: 100%; } }
 
 #menuGalerias:hover {
   width: 30%;
@@ -1308,7 +1345,7 @@
   color: #a1a1a1;
   font-size: 16px;
   text-align: center;
-  border-bottom: 1px solid #252525;
+  border-bottom: 1px solid #000;
   transition: 0.5s;
   cursor: pointer; }
 
@@ -1332,21 +1369,9 @@
 #menuGalerias:hover .menuGaleriasAfter {
   background: rgba(0, 0, 0, 0.3); }
 
-@media (max-width: 800px) {
-  #menuGalerias {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 150;
-    transition: 1s;
-    animation: cambiarfondomenu 30s infinite; }
-  #menuGalerias:hover {
-    width: 100%; } }
+.ellipse {
+  clip-path: ellipse(100% 50%);
+  transition: 1.5s; }
 
 .allSesMenu {
   position: fixed;
@@ -1979,8 +2004,21 @@
 
 body {
   background: var(--background-main);
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   font-family: var(--font-family); }
 
 .hide {
   display: none; }
+
+.ellipse {
+  clip-path: ellipse(100% 100%);
+  transition: 1.5s; }
+
+.hide-ellipse {
+  clip-path: ellipse(0px 0px at top right);
+  transition: 1s; }
+
+@media (max-width: 800px) {
+  .hide-ellipse-bottom {
+    clip-path: ellipse(0px 0px at bottom left);
+    transition: 1s; } }

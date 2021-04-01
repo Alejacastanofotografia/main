@@ -8,6 +8,8 @@ class Contacto extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+
     this.state = {
       name: '',
       telefono: '',
@@ -15,16 +17,18 @@ class Contacto extends React.Component {
       descripcion: '',
     };
     this.input = React.createRef();
-    this.form= React.createRef();
+    this.form = React.createRef();
   }
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
   handleChange(event) {
     const {name, value} = event.target;
     this.setState({
       [name]: value,
     });
+  }
+  handleFocus(element) {
+    document.querySelector(`#${element}`).focus();
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -33,18 +37,22 @@ class Contacto extends React.Component {
       telefono: this.state.telefono,
       email: this.state.email,
       descripcion: this.state.descripcion,
-	timestamp: ff.FieldValue.serverTimestamp()
+      timestamp: ff.FieldValue.serverTimestamp(),
     };
+
     if (this.state.name === null || this.state.name === '') {
       alert('el campo nombre es requerido');
-	document.querySelectorAll('.wrapperError')[0].classList.remove('hide')
+      this.handleFocus('nameForm');
+      document.querySelectorAll('.wrapperError')[0].classList.remove('hide');
     } else if (this.state.telefono === null || this.state.telefono === '') {
       alert('el campo telefono es requerido');
+      this.handleFocus('telForm');
     } else if (isNaN(this.state.telefono)) {
       alert('el campo telefono debe ser un número');
+      this.handleFocus('telForm');
     } else {
-	newContact(data);
-	this.form.current.reset()
+      newContact(data);
+      this.form.current.reset();
     }
   }
 
@@ -63,18 +71,20 @@ class Contacto extends React.Component {
           </p>
         </div>
         <div className="itemContacto formContacto">
-          <form ref={this.form}onSubmit={this.handleSubmit}>
+          <form ref={this.form} onSubmit={this.handleSubmit}>
             <input
               ref={this.input}
               type="text"
               name="name"
               placeholder="Nombre:"
+              id="nameForm"
               onChange={this.handleChange}
             />
             <input
               type="text"
               name="telefono"
               placeholder="Teléfono:"
+              id="telForm"
               onChange={this.handleChange}
             />
             <input
@@ -91,7 +101,7 @@ class Contacto extends React.Component {
             <button className="btn">Enviar</button>
           </form>
         </div>
-	<ModalError />
+        <ModalError />
       </div>
     );
   }

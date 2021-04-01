@@ -13,11 +13,11 @@ class Sesiones extends React.Component {
   }
   sesion(e, total, classNameD, folder, paisajes) {
     selectSesion(e, total, classNameD, folder, paisajes);
-      if(!this.state.toggleSesiones){
-        this.showMenuMovile(e);    
-      }
+	  if(window.screen.width <= 800){
+         this.showMenuMovile(); 
+	  } 
   }
-  showMenuMovile(e) {
+  showMenuMovileL(e) {
     if (this.state.toggleSesiones) {
       document.getElementById('menuGalerias').style.display = 'flex';
       this.setState({
@@ -30,14 +30,16 @@ class Sesiones extends React.Component {
       });
     }
   }
+  showMenuMovile() {
+    document.querySelector('#menuGalerias').classList.toggle('hide-ellipse-bottom');
+  }
 
   render() {
     return (
       <div>
-        <nav id="menuGalerias">
+        <nav  className="ellipse hide-ellipse-bottom" id="menuGalerias">
           <div className="MenuGaleriasAfter">
             <ul>
-              <h3 className="galeriasH">Sesiones</h3>
               <li onClick={e => this.selectSesion(e, 18, 'galeriaV', 'Adulto')}>
                 Retrato Adulto
               </li>
@@ -75,15 +77,14 @@ class Sesiones extends React.Component {
           <div className="contenido">
             <p className="frase">
               <span className="classNamespan" id="write1"></span>
-              <span className="maquinaEscribir">|</span>
-              Aquí va la frase
+              <span className="maquinaEscribir"></span>
             </p>
           </div>
           <ul id="mainSesiones"></ul>
           <ul id="mainSesionesAnimales" className="galeria"></ul>
           <ul id="mainSesionesFlores" className="galeriaV"></ul>
         </section>
-        <div className="allSesMenu" onClick={e => this.showMenuMovile(e)}>
+        <div className="allSesMenu" onClick={this.showMenuMovile}>
           <span className="material-icons">&#xe8f0;</span>
         </div>
       </div>

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 * {
-
   margin: 0;
   padding: 0;
 }
@@ -16,10 +15,11 @@ $total: 2rem;
   );
 
   //colors
-  --white-color: #eee;
+  --white-color: #ccc;
   --black-color: #202020;
   --light-color: hsl(345, 100%, 60%);
-  --black-rgba-media: rgba(0, 0, 0, 0.9);
+  --black-rgba-media: rgba(10, 10, 10, 0.9);
+
   --color-neutro: #888;
 
   //font-sizes
@@ -31,7 +31,7 @@ $total: 2rem;
 
   --main-top: 8rem;
 
---font-family: 'EB Garamond', serif;
+  --font-family: 'EB Garamond', serif;
 
   @media (max-width: 500px) {
     //font-sizes
@@ -42,22 +42,11 @@ $total: 2rem;
     --font-s-small: 0.6rem;
 
     --main-top: 4rem;
-
-    
-  --background-main: hsl(0, 0%, 90%);
-  --main-gradient: linear-gradient(to bottom, hsl(0, 0%, 80%), hsl(0, 0%, 100%));
-  --main-gradient-right: linear-gradient(
-    to right,
-    hsl(0, 0%, 80%),
-    hsl(0, 0%, 100%)
-  );
-  --white-color: #202020;
-  --black-color: #eee;
-  --black-rgba-media: rgba(200, 200, 200, 0.9);
   }
 }
 @import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu',
-  'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones', 'src/contacto', 'src/modalError';
+  'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones',
+  'src/contacto', 'src/modalError';
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -68,9 +57,23 @@ $total: 2rem;
 }
 body {
   background: var(--background-main);
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   font-family: var(--font-family);
 }
 .hide {
   display: none;
+}
+.ellipse {
+  clip-path: ellipse(100% 100%);
+  transition: 1.5s;
+}
+.hide-ellipse {
+  clip-path: ellipse(0px 0px at top right);
+  transition: 1s;
+}
+.hide-ellipse-bottom {
+  @media (max-width: 800px) {
+    clip-path: ellipse(0px 0px at bottom left);
+    transition: 1s;
+  }
 }
