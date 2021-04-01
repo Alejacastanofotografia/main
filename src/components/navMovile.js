@@ -85,7 +85,7 @@ class navMovile extends React.Component {
                   Home
                 </Link>
               </li>
-              <li onClick={e => this.selectSesion(e, 18, 'galeriaV', 'Adulto')}>
+              <li onClick={e => this.selectSesion(e, 20, 'galeriaV', 'Adulto')}>
                 <Link
                   className="links"
                   to="/sesiones"

@@ -1,0 +1,81 @@
+[debug] [2021-04-01T04:40:07.080Z] ----------------------------------------------------------------------
+[debug] [2021-04-01T04:40:07.086Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --host 192.168.1.5
+[debug] [2021-04-01T04:40:07.087Z] CLI Version:   9.3.0
+[debug] [2021-04-01T04:40:07.087Z] Platform:      win32
+[debug] [2021-04-01T04:40:07.087Z] Node Version:  v14.10.1
+[debug] [2021-04-01T04:40:07.090Z] Time:          Wed Mar 31 2021 23:40:07 GMT-0500 (hora estándar de Colombia)
+[debug] [2021-04-01T04:40:07.090Z] ----------------------------------------------------------------------
+[debug] [2021-04-01T04:40:07.090Z] 
+[debug] [2021-04-01T04:40:07.109Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-04-01T04:40:07.196Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-01T04:40:07.198Z] > authorizing via signed-in user
+[debug] [2021-04-01T04:40:07.198Z] [iam] checking project fotografiaalejacastano for permissions ["firebase.projects.get"]
+[debug] [2021-04-01T04:40:07.203Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-01T04:40:07.204Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-01T04:40:07.434Z] <<< HTTP RESPONSE 200 {"date":"Thu, 01 Apr 2021 04:40:05 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-01T04:40:07.492Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fotografiaalejacastano:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-04-01T04:40:07.610Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-04-01T04:40:07.611Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-04-01T04:40:08.073Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 01 Apr 2021 04:40:06 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=380","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-01T04:40:08.074Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project fotografiaalejacastano:
+
+  firebase.projects.get
+[debug] [2021-04-01T04:40:08.076Z] > refreshing access token with scopes: []
+[debug] [2021-04-01T04:40:08.076Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-01T04:40:08.265Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Thu, 01 Apr 2021 04:40:06 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-01T04:40:08.293Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fotografiaalejacastano [none]
+[debug] [2021-04-01T04:40:08.774Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fotografiaalejacastano 403
+[debug] [2021-04-01T04:40:08.774Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fotografiaalejacastano {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-04-01T04:40:08.775Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-04-01T04:40:08.964Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Client.doRequest (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:227:23)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Client.request (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:20)
+    at async Object.getFirebaseProject (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:289:21)
+    at async getProjectNumber (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\getProjectNumber.js:11:22)
+    at async C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:161:17
+[error] 
+[error] Error: Failed to get Firebase project fotografiaalejacastano. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-04-01T04:40:30.658Z] ----------------------------------------------------------------------
+[debug] [2021-04-01T04:40:30.661Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --host 0.0.0.0
+[debug] [2021-04-01T04:40:30.662Z] CLI Version:   9.3.0
+[debug] [2021-04-01T04:40:30.662Z] Platform:      win32
+[debug] [2021-04-01T04:40:30.662Z] Node Version:  v14.10.1
+[debug] [2021-04-01T04:40:30.663Z] Time:          Wed Mar 31 2021 23:40:30 GMT-0500 (hora estándar de Colombia)
+[debug] [2021-04-01T04:40:30.663Z] ----------------------------------------------------------------------
+[debug] [2021-04-01T04:40:30.663Z] 
+[debug] [2021-04-01T04:40:30.671Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-01T04:40:30.672Z] > authorizing via signed-in user
+[debug] [2021-04-01T04:40:30.672Z] [iam] checking project fotografiaalejacastano for permissions ["firebase.projects.get"]
+[debug] [2021-04-01T04:40:30.675Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-01T04:40:30.675Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-01T04:40:30.906Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Thu, 01 Apr 2021 04:40:29 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-01T04:40:30.941Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fotografiaalejacastano:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-04-01T04:40:31.475Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 01 Apr 2021 04:40:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=417","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-01T04:40:31.476Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project fotografiaalejacastano:
+
+  firebase.projects.get
+[debug] [2021-04-01T04:40:31.477Z] > refreshing access token with scopes: []
+[debug] [2021-04-01T04:40:31.478Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-01T04:40:31.672Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Thu, 01 Apr 2021 04:40:29 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-01T04:40:31.702Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fotografiaalejacastano [none]
+[debug] [2021-04-01T04:40:32.079Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fotografiaalejacastano 403
+[debug] [2021-04-01T04:40:32.079Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fotografiaalejacastano {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-04-01T04:40:32.080Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-04-01T04:40:32.265Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Client.doRequest (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:227:23)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Client.request (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:20)
+    at async Object.getFirebaseProject (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:289:21)
+    at async getProjectNumber (C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\getProjectNumber.js:11:22)
+    at async C:\Users\Edwar\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:161:17
+[error] 
+[error] Error: Failed to get Firebase project fotografiaalejacastano. Please make sure the project exists and your account has permission to access it.
