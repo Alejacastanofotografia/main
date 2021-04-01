@@ -9,6 +9,7 @@ import Nav from './components/nav';
 import Contacto from './components/contacto';
 import SobreMi from './components/sobreMi';
 import Social from './components/socialMedia';
+import VR360 from './components/a-frame';
 
 function App(props) {
   return (
@@ -42,7 +43,7 @@ function App(props) {
           <Nav active="defaultHome" />
           <Slider />
           <Menu />
-          <Home360 />
+	      <VR360 />
           <SobreMi />
           <Contacto />
           <Social />

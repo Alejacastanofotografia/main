@@ -18,7 +18,7 @@ class Menu extends React.Component {
           <Link
             to="/sesiones"
             className="wrapperImg"
-            onClick={e => this.selectSesion(e, 18, 'galeriaV', 'Adulto')}>
+            onClick={e => this.selectSesion(e, 20, 'galeriaV', 'Adulto')}>
             <img src="/images/menu/img4.jpg" alt="Retraro" title="retrato" />
             <div className="wrapperText">
               <p>Retratos</p>
@@ -28,7 +28,7 @@ class Menu extends React.Component {
             to="sesiones"
             className="wrapperImg"
             onClick={e =>
-              this.selectSesion(e, 20, 'galeria', 'Paisajes', 'paisajes')
+              this.selectSesion(e, 25, 'galeria', 'Paisajes', 'paisajes')
             }>
             <img src="/images/menu/img2.jpg" alt="Retraro" title="retrato" />
             <div className="wrapperText">
@@ -50,7 +50,7 @@ class Menu extends React.Component {
           <Link
 	    to="/sesiones"
             className="wrapperImg"
-            onClick={e => this.selectSesion(e, 10, 'galeriaV', 'Prequinces')}>
+            onClick={e => this.selectSesion(e, 15, 'galeriaV', 'Prequinces')}>
             <img src="/images/menu/img20.jpg" alt="Retraro" title="retrato" />
             <div className="wrapperText">
               <p>Quinces</p>

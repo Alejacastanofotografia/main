@@ -40,11 +40,11 @@ class Sesiones extends React.Component {
         <nav  className="ellipse hide-ellipse-bottom" id="menuGalerias">
           <div className="MenuGaleriasAfter">
             <ul>
-              <li onClick={e => this.selectSesion(e, 18, 'galeriaV', 'Adulto')}>
+              <li onClick={e => this.selectSesion(e, 20, 'galeriaV', 'Adulto')}>
                 Retrato Adulto
               </li>
               <li
-                onClick={e => this.selectSesion(e, 12, 'galeriaV', 'Infantil')}>
+                onClick={e => this.selectSesion(e, 20, 'galeriaV', 'Infantil')}>
                 Retrato Infantil
               </li>
               <li onClick={e => this.selectSesion(e, 12, 'galeriaV', 'Boda')}>
@@ -56,16 +56,16 @@ class Sesiones extends React.Component {
               </li>
               <li
                 onClick={e =>
-                  this.selectSesion(e, 10, 'galeriaV', 'Prequinces')
+                  this.selectSesion(e, 16, 'galeriaV', 'Prequinces')
                 }>
                 Prequinces
               </li>
-              <li onClick={e => this.selectSesion(e, 12, 'galeria', 'Quinces')}>
+              <li onClick={e => this.selectSesion(e, 15, 'galeria', 'Quinces')}>
                 Quinces
               </li>
               <li
                 onClick={e =>
-                  this.selectSesion(e, 20, 'galeria', 'Paisajes', 'paisajes')
+                  this.selectSesion(e, 25, 'galeria', 'Paisajes', 'paisajes')
                 }>
                 Paisajes
               </li>

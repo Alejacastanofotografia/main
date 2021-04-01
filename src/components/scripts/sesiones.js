@@ -36,7 +36,7 @@ export function selectSesion(e, total, classNameD, folder, paisajes) {
        `;
     }
     if (paisajes) {
-      for (let i = 1; i <= 12; i++) {
+      for (let i = 1; i <= 14; i++) {
         wrapper2.innerHTML += `
             <li>
               <a
