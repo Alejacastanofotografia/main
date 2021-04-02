@@ -1,4 +1,4 @@
-let modal = true,
+var modal = true,
   auto = true,
   img,
   folderName,
@@ -52,6 +52,63 @@ function toggleModal(e, folder, num, paisaje) {
   numModal = num;
   infoModales(folderName, total);
   listener();
+
+  //eventos touch para moviles
+  swipe();
+}
+//control para los efectos touch en moviles
+function swipe() {
+  let next_prev;
+  let numTouch = 0;
+  let numTranslate = 0;
+  let evtChange = 0;
+  let screenWidth = screen.width - screen.width / 3;
+  let containerH = document.getElementById('mainImg');
+
+  containerH.addEventListener('touchstart', evt => {
+    numTouch = evt.changedTouches[0].clientX;
+
+    containerH.addEventListener('touchmove', fun);
+  });
+  containerH.addEventListener('touchend', stopTranslate);
+
+  function fun(evt) {
+    evtChange = evt.changedTouches[0].clientX.toString();
+    //swipe to left
+    if (numTouch > evtChange) {
+      next_prev = true;
+      numTranslate = numTranslate - 3;
+      if (numTranslate < `-${screenWidth}`) {
+        stopTranslate(true);
+        // numTranslate = 0;
+        containerH.removeEventListener('touchmove', fun);
+      }
+
+      //swipe to right
+    } else {
+      next_prev = false;
+      numTranslate = numTranslate + 3;
+      if (numTranslate > screenWidth) {
+        //numTranslate = 0;
+        stopTranslate(false);
+        containerH.removeEventListener('touchmove', fun);
+      }
+    }
+    containerH.style.transform = `translateX(${numTranslate}px)`;
+  }
+  function stopTranslate() {
+    numTranslate = Math.abs(numTranslate);
+    let translate = Math.abs(numTranslate);
+    let screenThis = screen.width;
+    console.log(numTranslate);
+    if (next_prev) {
+          nextModal();
+    } else {
+      prevModal();
+    }
+    containerH.removeEventListener('touchmove', fun);
+    containerH.style.transform = `translateX(0px)`;
+  }
 }
 //prev
 function prevModal() {
@@ -61,6 +118,7 @@ function prevModal() {
   }
   img.src = `/images/Galerias/${folderName}/img${numModal}.jpg`;
   infoModales(folderName, total);
+  transitionImg(-200, 'prev');
 }
 //next
 function nextModal() {
@@ -70,6 +128,44 @@ function nextModal() {
   }
   img.src = `/images/Galerias/${folderName}/img${numModal}.jpg`;
   infoModales(folderName, total);
+  transitionImg(200, 'next');
+}
+//transition cambio de imagen
+function transitionImg(numM, next_prev) {
+  //animacion para cambio de cada imagen
+  let numThis = numM;
+  let numOpacity = 0.7;
+  let animationImg = setInterval(trans, 1);
+  function trans() {
+    if (next_prev === 'next') {
+      if (numThis <= 0) {
+        stopTrans();
+      } else {
+        numThis--;
+        startTrans(numThis);
+      }
+    } else {
+      if (numThis >= 0) {
+        stopTrans();
+      } else {
+        numThis++;
+        startTrans(numThis);
+      }
+    }
+  }
+  function stopTrans() {
+    clearInterval(animationImg);
+    numThis = numM;
+    numOpacity = 0.5;
+  }
+  function startTrans(numThis) {
+    numOpacity = numOpacity + 0.005;
+    if (numOpacity >= 1) {
+      numOpacity = 1;
+    }
+    img.style.transform = `translateX(${numThis}px)`;
+    img.style.opacity = `${numOpacity}`;
+  }
 }
 //foler con información sobre el nombre y número de imagen actual
 function infoModales(folderName, total) {
@@ -132,7 +228,8 @@ function listener() {
   play.addEventListener('click', autoModal);
   stop.addEventListener('click', stopModal);
 }
-//dark-light theme
+
+//activar eventos con teclas
 document.addEventListener('keydown', e => {
   if (!modal) {
     if (e.keyCode == 39) nextModal();

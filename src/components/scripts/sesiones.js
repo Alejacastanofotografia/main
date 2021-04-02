@@ -1,5 +1,4 @@
 export function selectSesion(e, total, classNameD, folder, paisajes) {
-  if (folder === 'Adulto') console.log('entramos al adulto');
   setTimeout(() => {
     let wrapper = document.querySelector('#mainSesiones');
     let wrapper2 = document.querySelector('#mainSesionesAnimales');

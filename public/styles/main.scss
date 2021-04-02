@@ -44,7 +44,7 @@ $total: 2rem;
     --main-top: 4rem;
   }
 }
-@import '../scripts/vr/styles/styles360', 'src/mixins', 'src/header', 'src/menu',
+@import 'src/mixins', 'src/header', 'src/menu',
   'src/sobreMi', 'src/slider', 'src/home360', 'src/social', 'src/sesiones',
   'src/contacto', 'src/modalError', 'src/a-frame';
 
