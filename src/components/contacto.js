@@ -14,7 +14,7 @@ class Contacto extends React.Component {
       name: '',
       telefono: '',
       email: '',
-      descripcion: '',
+      descripcion: ''
     };
     this.input = React.createRef();
     this.form = React.createRef();
@@ -37,6 +37,7 @@ class Contacto extends React.Component {
       telefono: this.state.telefono,
       email: this.state.email,
       descripcion: this.state.descripcion,
+      dim: [window.screen.width, window.screen.height],
       timestamp: ff.FieldValue.serverTimestamp(),
     };
 

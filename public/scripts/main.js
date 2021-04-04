@@ -63,7 +63,7 @@ function swipe() {
   let numTranslate = 0;
   let evtChange = 0;
   let screenWidth = screen.width - screen.width / 3;
-  let containerH = document.getElementById('mainImg');
+  let containerH = document.getElementById('wrapperImgModal');
 
   containerH.addEventListener('touchstart', evt => {
     numTouch = evt.changedTouches[0].clientX;
@@ -94,13 +94,9 @@ function swipe() {
         containerH.removeEventListener('touchmove', fun);
       }
     }
-    containerH.style.transform = `translateX(${numTranslate}px)`;
+    //containerH.style.transform = `translateX(${numTranslate}px)`;
   }
   function stopTranslate() {
-    numTranslate = Math.abs(numTranslate);
-    let translate = Math.abs(numTranslate);
-    let screenThis = screen.width;
-    console.log(numTranslate);
     if (next_prev) {
           nextModal();
     } else {
@@ -118,7 +114,7 @@ function prevModal() {
   }
   img.src = `/images/Galerias/${folderName}/img${numModal}.jpg`;
   infoModales(folderName, total);
-  transitionImg(-200, 'prev');
+
 }
 //next
 function nextModal() {
@@ -128,44 +124,6 @@ function nextModal() {
   }
   img.src = `/images/Galerias/${folderName}/img${numModal}.jpg`;
   infoModales(folderName, total);
-  transitionImg(200, 'next');
-}
-//transition cambio de imagen
-function transitionImg(numM, next_prev) {
-  //animacion para cambio de cada imagen
-  let numThis = numM;
-  let numOpacity = 0.7;
-  let animationImg = setInterval(trans, 1);
-  function trans() {
-    if (next_prev === 'next') {
-      if (numThis <= 0) {
-        stopTrans();
-      } else {
-        numThis--;
-        startTrans(numThis);
-      }
-    } else {
-      if (numThis >= 0) {
-        stopTrans();
-      } else {
-        numThis++;
-        startTrans(numThis);
-      }
-    }
-  }
-  function stopTrans() {
-    clearInterval(animationImg);
-    numThis = numM;
-    numOpacity = 0.5;
-  }
-  function startTrans(numThis) {
-    numOpacity = numOpacity + 0.005;
-    if (numOpacity >= 1) {
-      numOpacity = 1;
-    }
-    img.style.transform = `translateX(${numThis}px)`;
-    img.style.opacity = `${numOpacity}`;
-  }
 }
 //foler con información sobre el nombre y número de imagen actual
 function infoModales(folderName, total) {

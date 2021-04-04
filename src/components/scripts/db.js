@@ -17,7 +17,7 @@ var firebaseConfig = {
 
 const fb = firebase.initializeApp(firebaseConfig);
 
-// firebase.auth().signInAnonymously().then(() => console.log('anonimuos')).catch( error => console.log(error.message, error.code));
+ firebase.auth().signInAnonymously().then(() => console.log('anonimuos')).catch( error => console.log(error.message, error.code));
 
 firebase.analytics();
 

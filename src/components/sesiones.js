@@ -44,7 +44,7 @@ class Sesiones extends React.Component {
                 Retrato Adulto
               </li>
               <li
-                onClick={e => this.selectSesion(e, 20, 'galeriaV', 'Infantil')}>
+                onClick={e => this.selectSesion(e, 32, 'galeriaV', 'Infantil')}>
                 Retrato Infantil
               </li>
               <li onClick={e => this.selectSesion(e, 12, 'galeriaV', 'Boda')}>
@@ -56,7 +56,7 @@ class Sesiones extends React.Component {
               </li>
               <li
                 onClick={e =>
-                  this.selectSesion(e, 16, 'galeriaV', 'Prequinces')
+                  this.selectSesion(e, 15, 'galeriaV', 'Prequinces')
                 }>
                 Prequinces
               </li>

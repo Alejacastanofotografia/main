@@ -7,8 +7,11 @@ class ModalSesiones extends React.Component {
         <div className="closeModal" id="closeModal">
           X
         </div>
-        <div className="imagenLight">
-          <img id="mainImg" src="" />
+        <div className="imagenLight" id="wrapperImgModal">
+          <div className="wrapperImagenLight">
+            <img id="mainImg" src="" />
+            <p id="mark">Aleja Castaño</p>
+          </div>
         </div>
         <div id="prevModal" className="next-prev prev">
           &#60;
@@ -27,7 +30,8 @@ class ModalSesiones extends React.Component {
             </i>
           </ul>
         </nav>
-        <div id="userBar"className="barrausuario"> </div>
+        <div id="userBar" className="barrausuario">
+        </div>
       </div>
     );
   }

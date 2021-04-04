@@ -32,6 +32,7 @@ $total: 2rem;
   --main-top: 8rem;
 
   --font-family: 'EB Garamond', serif;
+  --main-padding: 2rem;
 
   @media (max-width: 500px) {
     //font-sizes
@@ -42,6 +43,7 @@ $total: 2rem;
     --font-s-small: 0.6rem;
 
     --main-top: 4rem;
+    --main-padding: .5rem;
   }
 }
 @import 'src/mixins', 'src/header', 'src/menu',
